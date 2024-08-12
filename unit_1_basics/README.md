@@ -211,4 +211,113 @@ print(dimensions[1])
 ## Estructura de control selectiva
 
 
+En ocasiones en un programa es necesario examinar un conjunto de condiciones y decidir que acción tomar con base a estas condiciones.
 
+````python
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+
+for car in cars:
+    if car == 'bmw':
+        print(car.upper())
+    else:
+        print(car.title())
+````
+
+[**`Ejemplo 8`**](./ejemplo-08/if.ipynb)
+
+## Diccionarios
+
+Los diccionarios son un tipo de dato abstracto que permiten conectar información relacionada.
+
+````python
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0['color'])
+print(alien_0['points'])
+````
+
+Agregar nuevos elementos clave-valor a un diccionario
+
+````python
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+alien_0['x_position'] = 0 
+alien_0['y_position'] = 25
+print(alien_0)
+````
+
+Iniciar un diccionario vacio
+
+````python
+alien_0 = {}
+   
+alien_0['color'] = 'green'
+alien_0['points'] = 5
+
+print(alien_0)
+````
+
+Modificar valores en un diccionario
+
+````python
+alien_0['color'] = 'yellow'
+print("The alien is now " + alien_0['color'] + ".")
+````
+Eliminar elementos clave-valor de un diccionario
+
+````python
+del alien_0['points'] 
+print(alien_0)
+````
+
+[**`Ejemplo 9`**](./ejemplo-09/diccionarios.ipynb)
+
+## Lista de diccionarios
+
+````python
+alien_0 = {'color': 'green', 'points': 5}
+alien_1 = {'color': 'yellow', 'points': 10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens = [alien_0, alien_1, alien_2]
+
+for alien in aliens:
+    print(alien)
+````
+
+## Lista en diccionarios
+
+````python
+# Store information about a pizza being ordered.
+pizza = {
+       'crust': 'thick',
+       'toppings': ['mushrooms', 'extra cheese'],
+       }
+       
+# Summarize the order.
+print("You ordered a " + pizza['crust'] + "-crust pizza " + "with the following toppings:")
+
+for topping in pizza['toppings']: 
+    print("\t" + topping)
+````
+
+## Diccionario en un diccionario
+
+Es posibre anidar un diccionario dentro de otro diccionario.
+
+````python
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton',
+    },
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris',
+    },
+}
+````
+
+[**`Ejemplo 10`**](./ejemplo-10/diccionarios_listas.ipynb)
