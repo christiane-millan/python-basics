@@ -42,11 +42,18 @@ En Python los datos son almacenados de acuerdo a su tipo. Los tipos de datos bá
 
 Los operadores aritméticos de Python son los siguiente:
 
-* Suma: `+`
-* Resta: `-`
-* Multiplicación: `*`
-* División: `/` y `//`
-* Exponente: `**`
+| Operador | Operación        | Ejemplo  |
+|----------|------------------|----------|
+| `+`      | Suma             | `5 + 5`  |
+| `-`      | Resta            | `7 - 5`  |
+| `*`      | Multiplicación   | `3 * 7`  |
+| `/`      | División entera  | `5 / 2`  |
+| `//`     | División precisa | `5 / 2`  |
+| `%`      | Residuo          | `5 % 2`  |
+| `**`     | Potencia         | `5 ** 3` |
+
+> Las coversiones o casting de variables es importante para asegurar los resultos esperados.
+> `int()`, `float()` y `str()` son los métodos que nos permiten converti un tipo de dato a otro, entero, flotante o cadena, respectivamente.
 
 [**`Ejemplo 2`**](./ejemplo-02/operadores_aritmeticos.ipynb)
 
@@ -62,12 +69,14 @@ Existen diferentes formas, pero una de las más simples y prácticas es el uso d
 
 Los operadores de comparación de Python son
 
-* Mayor que: `>`
-* Menor que: `<`
-* Mayor o igual que: `>=`
-* Menor o giual que: `<=`
-* Igual que: `==`
-* Diferente que: `!=`
+| Operador | Operacion         | Ejemplo  |
+|----------|-------------------|----------|
+| `==`     | Igualdad          | `5 == 7` |
+| `!=`     | Desigualdad       | `5 != 7` |
+| `>`      | Mayor que         | `9 > 7`  |
+| `<`      | Menor que         | `7 < 9`  |
+| `>=`     | Mayor o igual que | `9 >= 7` |
+| `<=`     | Menor o igual que | `7 <= 9` |
 
 [**`Ejemplo 4`**](./ejemplo-04/operadores_comparacion.ipynb) [**`Reto 2`**](./reto-02/operadores_comparación.ipynb)
 
@@ -321,3 +330,74 @@ users = {
 ````
 
 [**`Ejemplo 10`**](./ejemplo-10/diccionarios_listas.ipynb)
+
+## While
+
+el ciclo `while` permite repetir un bloque de instrucciones mientras la condición sea verdad.
+
+En una estrategia simple, se puede implementar un contador y mediante una condición, determinar el número de repeticiones del bloque de instrucciones del `while`.
+````python
+current_number = 1
+while current_number <= 5:
+    print(current_number)
+    current_number += 1
+````
+
+Otra forma de controlar un ciclo `while` es a través de un centinela, en este caso cuando la condición no revela que el centinela comple un valor, entonces, se repite el bloque hasta que ocurra lo contrario.
+
+````python
+prompt = "\nTell me something, and I will repeat it back to you:" 
+prompt += "\nEnter 'quit' to end the program. "
+
+message = ""
+wwhile message != 'quit':
+    message = input(prompt)
+    print(message)
+````
+
+En otra estrategia más, el uso de una bandera permite determinar hasta cuando repetir el ciclo `while`.
+
+````python
+prompt = "\nTell me something, and I will repeat it back to you:" 
+prompt += "\nEnter 'quit' to end the program. "
+
+active = True
+while active:
+    message = input(prompt)
+    if message == 'quit': 
+        active = False
+    else: 
+        print(message)
+````
+
+En el siguiente ejemplo, se utilizar una estrategia basada en el uso de la sentencia `break`, la cual interrumpe la ejecución del bloque de instrucciones del ciclo `while`.
+
+````python
+prompt = "\nPlease enter the name of a city you have visited:"
+prompt += "\n(Enter 'quit' when you are finished.) "
+
+while True:
+city = input(prompt)
+    if city == 'quit':
+        break
+    else:
+        print("I'd love to go to " + city.title() + "!")
+````
+
+En adición a `break` existe la sentencia `continue`, la cual salta el resto del bloque de instrucciones, pero nuevamente cvalida la condición del ciclo `while`.
+
+````python
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    
+    print(current_number)
+````
+
+[**`Ejemplo 11`**](./ejemplo-11/while_listas.ipynb)
+
+## Funciones
+
+Las funciones son bloques de código nombradas que son diseñadas para realizar un trabajo específico. Cuando se realizar una tarea en partícular que se ha definido en una función, se realiza la _llamada_ de la función a través de su nombre. Si es necesario realizar la tarea múltiples veces en varias secciones del programa, no es necesario escribir el código para la misma tarea

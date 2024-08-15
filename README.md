@@ -11,3 +11,8 @@ __Universidad Tecnológica de la Mixteca__
 2. [Programación Orientada a Objetos]()
 3. [Programación Funcional]()
 4. [Entornos de programación]()
+
+
+## Ejercicios y problemas
+
+1. [Fundamentos de programación](./uni_1_basics_problems/README.md)
