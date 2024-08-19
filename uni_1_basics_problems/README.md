@@ -47,7 +47,7 @@ Crea una función llamada `polares_a_rectangulares(r, theta)` que convierta coor
 Escribe un programa que lea un número entero positivo y luego llame a una función `factores_primos(n)` que visualice los factores primos de ese número.
 
 ### 6.6. Visualización de un calendario
-Crea un programa que, mediante funciones, visualice un calendario de un mes y un año especificado. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
+Crea un programa que, mediante la implemetación de una función, visualice un calendario de un mes y un año especificado. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
 
 ### 6.7. Cambio de base
 Escribe un programa que lea dos enteros positivos `n` y `b`, luego llame a una función `cambiar_base(n, b)` para calcular y visualizar la representación del número `n` en la base `b`.

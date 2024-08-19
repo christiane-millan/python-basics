@@ -384,7 +384,7 @@ city = input(prompt)
         print("I'd love to go to " + city.title() + "!")
 ````
 
-En adición a `break` existe la sentencia `continue`, la cual salta el resto del bloque de instrucciones, pero nuevamente cvalida la condición del ciclo `while`.
+En adición a `break` existe la sentencia `continue`, la cual salta el resto del bloque de instrucciones, pero nuevamente valida la condición del ciclo `while`.
 
 ````python
 current_number = 0
@@ -398,6 +398,6 @@ while current_number < 10:
 
 [**`Ejemplo 11`**](./ejemplo-11/while_listas.ipynb)
 
-## Funciones
+---
 
-Las funciones son bloques de código nombradas que son diseñadas para realizar un trabajo específico. Cuando se realizar una tarea en partícular que se ha definido en una función, se realiza la _llamada_ de la función a través de su nombre. Si es necesario realizar la tarea múltiples veces en varias secciones del programa, no es necesario escribir el código para la misma tarea
+[Funciones](./functions/README.md)
