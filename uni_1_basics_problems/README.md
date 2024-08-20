@@ -49,8 +49,26 @@ Escribe un programa que lea un número entero positivo y luego llame a una funci
 ### 6.6. Visualización de un calendario
 Crea un programa que, mediante la implemetación de una función, visualice un calendario de un mes y un año especificado. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
 
+Por ejemplo, si se ingresa como mes febrero(2) y año 2021, la impresión en pantalla será:
+
+````text
+2021
+Febrero
+L   M   Mi  J   V   S   D
+    1   2   3   4   5   6
+7   8   9   10  11  12  13
+14  15  16  17  18  19  20
+21  22  23  24  25  26  27
+28
+````
+
+Para conocer los días correctos de la semana para cada día del mes, investiga sobre el calendario perpetuo. 
+
+
 ### 6.7. Cambio de base
-Escribe un programa que lea dos enteros positivos `n` y `b`, luego llame a una función `cambiar_base(n, b)` para calcular y visualizar la representación del número `n` en la base `b`.
+Escribe un programa que lea dos enteros positivos `n` y `b`, luego llame a una función `cambiar_base(n, b)` para calcular y visualizar la representación del número `n` que se encuentra en base decimal, y será convertido a base `b`. Para realizar el cambio puedes usar un algoritmo basado en divisiones sucesivas.
+
+Por ejemplo, el resultado de la llamada a la función: `cambiar_base(34, 8)` será igual a  42.
 
 ### 6.8. Cálculo del máximo común divisor
 Crea un programa que permita calcular el máximo común divisor (`mcd`) de dos números usando el algoritmo de Euclides. La función `mcd(a, b)` debe devolver el `mcd` de `a` y `b`.
