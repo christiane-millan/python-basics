@@ -10,7 +10,7 @@ Escribe una función llamada `es_divisible(a, b)` que reciba dos números entero
 
 ### 6.3. Conversión de Celsius a Fahrenheit
 Crea una función llamada `celsius_a_fahrenheit(c)` que convierta una temperatura dada en grados Celsius a grados Fahrenheit. La fórmula de conversión es: 
-$ F = \frac{9}{5} C + 32 $
+$F = \frac{9}{5} C + 32$
 
 ### 6.4. Verificación de dígito
 Escribe una función llamada `es_digito(caracter)` que determine si un carácter dado es uno de los dígitos del 0 al 9. La función debe devolver `True` si es un dígito, y `False` en caso contrario.
