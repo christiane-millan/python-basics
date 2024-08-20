@@ -116,6 +116,6 @@ Escribe una función llamada `puntos_dentro_triangulo(v1, v2, v3)` que calcule c
 Crea un programa que, mediante funciones, determine el área de la circunferencia circunscrita de un triángulo, dado por las coordenadas de sus tres vértices.
 
 ### 6.20. Cálculo de funciones trigonométricas
-Dado el valor de un ángulo $θ$, escribe una función llamada `funciones_trigonometricas(theta)` que muestre el valor de todas las funciones trigonométricas correspondientes a ese ángulo (`sin`, `cos`, `tan`, `sec`, `csc`, `cot`).
+Dado el valor de un ángulo $θ$, escribe una función llamada `funciones_trigonometricas(theta)` que muestre el valor de todas las funciones trigonométricas correspondientes a ese ángulo (`sin`, `cos`, `tan`, `sec`, `csc`, `cot`). Para este ejercicio se sugiere investigar sobre las series de Taylor o series de Maclaurin.
 
 ---
