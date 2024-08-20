@@ -46,6 +46,38 @@ Crea una función llamada `polares_a_rectangulares(r, theta)` que convierta coor
 ### 6.5. Factores primos de un número
 Escribe un programa que lea un número entero positivo y luego llame a una función `factores_primos(n)` que visualice los factores primos de ese número.
 
+_¿Cómo se encuentran los factores primos?_
+
+Para encontrar los factores primos de un número, se divide repetidamente por los números primos más pequeños (2, 3, 5, 7, etc.) hasta que el resultado sea 1. Aquí tienes un proceso paso a paso:
+
+	1.	Divide el número por el menor número primo posible (que es 2) y sigue dividiendo hasta que ya no sea divisible.
+	2.	Pasa al siguiente número primo (3, luego 5, etc.) y repite el proceso.
+	3.	Continúa hasta que el número restante sea 1.
+
+Ejemplo práctico:
+
+Supongamos que queremos encontrar los factores primos de 60.
+
+	1.	Dividimos 60 por 2 (el menor número primo):
+
+60 ÷ 2 = 30
+
+	2.	Dividimos 30 por 2 de nuevo:
+
+30 ÷ 2 = 15
+
+	3.	El 15 ya no es divisible por 2, así que pasamos al siguiente número primo, que es 3:
+
+15 ÷ 3 = 5
+
+	4.	El 5 es un número primo, así que lo dejamos como está.
+
+Los factores primos de 60 son 2, 2, 3 y 5, o bien:
+
+
+$60 = 2^2 \times 3 \times 5$
+
+
 ### 6.6. Visualización de un calendario
 Crea un programa que, mediante la implemetación de una función, visualice un calendario de un mes y un año especificado. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
 
