@@ -110,11 +110,11 @@ Escribe una función llamada `inverso_numero(n)` que devuelva el inverso de un n
 
 ### 6.10. Cálculo del coeficiente binomial
 Crea una función llamada `coeficiente_binomial(m, n)` que calcule el coeficiente binomial usando la fórmula:
-$ \binom{m}{n} = \frac{m!}{n!(m-n)!} $
+$\binom{m}{n} = \frac{m!}{n!(m-n)!}$
 
 ### 6.11. Suma de una progresión geométrica
 Escribe un programa que lea dos números `x` y `n` y luego use una función `suma_progresion(x, n)` para calcular la suma de la progresión geométrica:
-$ 1 + x + x^2 + x^3 + \cdots + x^n $
+$1 + x + x^2 + x^3 + \cdots + x^n$
 
 ### 6.12. Análisis de datos de entrada
 Crea un programa que permita introducir una serie de números y luego utilice funciones para encontrar el valor mayor, el valor menor, y la suma de los datos. También debe calcular la media de los datos.
