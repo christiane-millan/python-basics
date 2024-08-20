@@ -121,17 +121,17 @@ Crea un programa que permita introducir una serie de números y luego utilice fu
 
 ### 6.13. Cálculo de una función matemática
 Escribe una función llamada `calcular_valor(x)` que acepte un parámetro `x` (donde `x \neq 0`) y devuelva el siguiente valor:
-$ x^5(e^{2x}-1) $
+$x^5(e^{2x}-1)$
 
 ### 6.14. Cálculo de una expresión matemática
 Crea una función llamada `calcular_expresion(x, n)` que acepte dos parámetros `x` y `n`. La función debe devolver:
-- Si $x \geq 0$: $ x + \frac{x^n}{n} - \frac{x^{n+2}}{n+2} $
-- Si $x < 0$: $ \frac{x^{n+1}}{n + 1} - \frac{x^{n-1}}{n-1} $
+- Si $x \geq 0$: $x + \frac{x^n}{n} - \frac{x^{n+2}}{n+2}$
+- Si $x < 0$: $\frac{x^{n+1}}{n + 1} - \frac{x^{n-1}}{n-1}$
 
 ### 6.15. Cálculo del área de un triángulo
 Escribe una función llamada `area_triangulo(a, b, c)` que reciba las longitudes de los tres lados de un triángulo (`a`, `b`, `c`) y devuelva el área del triángulo usando la fórmula de Herón:
-$ Área = \sqrt{p(p-a)(p-b)(p-c)} $
-donde $ p = \frac{a+b+c}{2} $
+$Área = \sqrt{p(p-a)(p-b)(p-c)}$
+donde $p = \frac{a+b+c}{2}$
 
 ### 6.16. Funciones de calendario
 Escribe un programa mediante funciones que realice las siguientes tareas:
