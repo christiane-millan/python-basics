@@ -8,7 +8,7 @@ Esto significa que tendremos una manera gráfica de representar una situación, 
 
 Las **clases** se representan así:
 
-![class]()
+![class](./img/class.png)
 
 En la parte superior se colocan los atributos o propiedades, y debajo las operaciones de la clase. Notarás que el primer caracter con el que empiezan es un símbolo. Este denotará la visibilidad del atributo o método, esto es un término que tiene que ver con Encapsulamiento y veremos más adelante a detalle.
 
