@@ -38,7 +38,10 @@ def greet_users(names):
         msg = "Hello, " + name.title() + "!"
         print(msg)
 
-usernames = ['hannah', 'ty', 'margot'] greet_users(usernames)
+usernames = ['hannah', 'ty', 'margot'] 
+greet_users(usernames)
 ````
+
+147-mt
 
 - [**`Ejemplo 13 - Funciones con Listas `**]()

@@ -2,6 +2,10 @@
 
 ## 1. Objetivos
 
+* Comprender los conceptos de la programación procedimental en Python.
+* Implementar estructuras del control en Python.
+* Implementar listas, tuplas y diccionarios.
+* Implementar programación modular mendiante funciones.
 
 ## Scripts y Jupyter Notebooks
 
