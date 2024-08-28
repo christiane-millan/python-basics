@@ -49,6 +49,6 @@ En este ejemplo se describe que la Clase A contiene varios elementos de la Clase
 
 En la composición, la relación es similar a la agregación, solo que su relación es totalmente compenetrada, de tal modo que, conceptualmente una de estas clases no podría vivir si no existiera la otra.
 
-!https://static.platzi.com/media/user_upload/uml-relacion-composicion-2d4cb1fa-5422-44e3-849b-3a3e2d276733.jpg
+![composition](./img/composition.png)
 
-Con esto terminamos nuestro primer módulo. Vamos al siguiente para entender cómo podemos hacer un análisis y utilizar estos elementos para construir nuestro diagrama de clases de Uber.
+Existen otras símbolos que periten expresar relaciones particulares. Por lo que, es importante que si deseas profundizar en el uso de UML, investiges más acerca del tema. Además, de la posibilidad de crear otro tipo de diagramas bajo el estándar de UML.
