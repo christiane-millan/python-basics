@@ -16,3 +16,8 @@ __Universidad Tecnológica de la Mixteca__
 ## Ejercicios y problemas
 
 1. [Fundamentos de programación](./uni_1_basics_problems/README.md)
+
+
+## Códigos desarrollados en clase por el profesor
+
+[**`Repositori de la clase`**](https://github.com/christiane-millan/python-basics-lectures-2024v)

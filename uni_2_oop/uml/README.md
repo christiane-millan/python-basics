@@ -43,7 +43,7 @@ El tipo de realación agregación se parece a la asociación en que un elemento 
 
 ![aggregation](./img/aggregation.png)
 
-En este ejemplo se describe que la Clase A contiene varios elementos de la Clase B. Estos últimos son comúnmente representados con listas o colecciones de datos.
+En este ejemplo se describe que la Clase A contiene varios elementos de la Clase B. Estos últimos son comúnmente representados con listas o colecciones de dato.
 
 ### Composición
 
