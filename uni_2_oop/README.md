@@ -64,7 +64,7 @@ class Student():
     def
 ````
 
-[**`Ejemplo - Clases`**]()
+[**`Ejemplo - Clases`**](./code/clases.ipynb)
 
 ### Modularidad
 
