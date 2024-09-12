@@ -65,6 +65,7 @@ class Student():
 ````
 
 [**`Ejemplo - Clases`**](./code/clases.ipynb)
+[**`Ejercicio - Clases: Student & Classroom`**](./code/student-classroom.ipynb)
 
 ### Modularidad
 
@@ -82,5 +83,41 @@ La **modularidad** de nuestro código nos va a permitir
 
 Una buena práctica es separando las clases en archivos diferentes.
 
-## Herencia y polimorfismo
+[**`Ejemplo - Módulos y paquetes`**](./code/modules-packages.ipynb)
+
+## Herencia
+
+**Don’t repeat yourself** es una filosofía que promueve la reducción de duplicación en programación, esto nos va a inculcar que no tengamos líneas de código duplicadas.
+
+Toda pieza de información nunca debería ser duplicada debido a que incrementa la dificultad en los cambios y evolución.
+
+La **herencia** nos permite crear nuevas clases a partir de otras, se basa en modelos y conceptos de la vida real. También tenemos una jerarquía de **padre e hijo.**
+
+````python
+class Car:
+    def __init__(self, id, license, driver, passengers):
+        self.id = id
+        self.licence = license
+        self.driver = driver
+        self.pasangers = passengers
+
+class UberX(Car):
+    def __init__(self, id, license, driver, passengers, brand, model):
+        super().__init__(id, license, driver, passengers)
+        self.brand = brand
+        self.model = model
+
+class UberBlack(Car):
+    def __init__(self, id, license, driver, passingers, typeCarAccepted, seatsMaterial):
+        super().__init__(id, license, driver, passengers)
+        self.typeCardAccepted = typeCarAccepted
+        self.seatsMaterial = seatsMaterial
+````
+
+[**`Ejemplo - Herencia`**]()
+
+## Polimorfismo
+
+El concepto de polimorfismo es un nombre __rimbombante__ de describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explicitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution en honor a Barbara Liskov, la cual dice, que se puede sustituir con cualquier subclase a la superclase.
+
 
