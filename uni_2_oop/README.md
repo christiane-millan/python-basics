@@ -114,7 +114,7 @@ class UberBlack(Car):
         self.seatsMaterial = seatsMaterial
 ````
 
-[**`Ejemplo - Herencia`**]()
+[**`Ejemplo - Herencia`**](./code/inheritance.ipynb)
 
 ## Polimorfismo
 
