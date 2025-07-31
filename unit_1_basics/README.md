@@ -16,20 +16,6 @@
 
 [Ambientes virtuales](../00-ambiente/README.md)
 
-## Variables 
-
-En Python. la asignación de datos a las `variables` se realiza mediante `=`.
-
-* La sintaxis es:
-
-```python
-nombre_de_la_variable = valor
-```
-
-`valor` puede ser cualquier tipo de dato
-
-> ⚠️ uso del modo __snake_case__ para definir el identificador de una variable.
-
 ## Tipos de datos
 
 En Python los datos son almacenados de acuerdo a su tipo. Los tipos de datos básicos son:
@@ -84,6 +70,20 @@ Los operadores de comparación de Python son
 | `<=`     | Menor o igual que | `7 <= 9` |
 
 [**`Ejemplo 4`**](./ejemplo-04/operadores_comparacion.ipynb) [**`Reto 2`**](./reto-02/operadores_comparación.ipynb)
+
+## Variables 
+
+En Python. la asignación de datos a las `variables` se realiza mediante `=`.
+
+* La sintaxis es:
+
+```python
+nombre_de_la_variable = valor
+```
+
+`valor` puede ser cualquier tipo de dato
+
+> ⚠️ uso del modo __snake_case__ para definir el identificador de una variable.
 
 ## Listas
 
