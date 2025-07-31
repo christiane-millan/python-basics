@@ -18,18 +18,60 @@
 
 ## Tipos de datos
 
-En Python los datos son almacenados de acuerdo a su tipo. Los tipos de datos básicos son:
+En Python los programa manipulan objeto de de datos y son almacenados de acuerdo a su tipo (escalares y no escalares). 
 
-* `int`: números enteros
-* `float`: números de punto flotante o decimales
-* `string`: secuencia de caracteres 
-* `booleano`: valor lógico (true o false)
+Los tipos de datos básicos o escaleres son:
+
+* `int`: números enteros, ejemplo: `5`, `-100`
+* `float`: números de punto flotante o decimales, ejemplo: `3.27`, `2.0`
+* `booleano`: valor lógico (`True` o `False`)
+* `NoneType`: es un tipo especial y tiene un único valor `None`.
+
+Los tipos de datos no escalares son:
+
+* `String`: secuencia de caracteres.
+* `List`:
+* `Dictionary`:
 
 > La función `type()` permite conocer el tipo de dato de una variable.
 
 [**`Ejemplo 1`**](./ejemplo-01/variables_tipos_datos.ipynb)
 
-## Operadores aritméticos
+
+> La conversión de tipos o *casting* permite convertir un tipo de datos en otros.
+
+```python
+float(123)
+round(7.9)
+float(round(7.2))
+int(7.2)
+int(7.9)
+```
+
+## Expresiones 
+
+- Mediante la combinación de objetos y operadores se forman las expresione s
+
+```python
+3 + 2
+5 / 3
+```
+
+- Una expresión tiene un valor, el cual tiene un tipo
+
+```python
+3 + 2 # tiene el valor 5 y el tipo int
+5 / 3 # tinene el valor 1.666667 y tiene el tipo float 
+```
+
+- Python evalúa las expresiones y almacena el valor (**No almacena las expresiones**).
+- La sintaxis para una expresión simple es:
+
+```
+<objeto> <operador> <objeto>
+```
+
+**Operadores aritméticos**
 
 Los operadores aritméticos de Python son los siguiente:
 
@@ -43,8 +85,8 @@ Los operadores aritméticos de Python son los siguiente:
 | `%`      | Residuo          | `5 % 2`  |
 | `**`     | Potencia         | `5 ** 3` |
 
-> Las coversiones o casting de variables es importante para asegurar los resultos esperados.
-> `int()`, `float()` y `str()` son los métodos que nos permiten converti un tipo de dato a otro, entero, flotante o cadena, respectivamente.
+> Las conversiones o casting de variables es importante para asegurar los resultados esperados.
+> `int()`, `float()` y `str()` son los métodos que nos permiten convertir un tipo de dato a otro, entero, flotante o cadena, respectivamente.
 
 [**`Ejemplo 2`**](./ejemplo-02/operadores_aritmeticos.ipynb)
 
@@ -73,7 +115,24 @@ Los operadores de comparación de Python son
 
 ## Variables 
 
-En Python. la asignación de datos a las `variables` se realiza mediante `=`.
+En las ciencias de la computación no aplican las ecuaciones matemáticas ya que no se utiliza el conocimiento declarativo, si no el conocimiento imperativo. 
+
+**Matemáticas**
+
+```
+a + 2 = b - 1
+x * x = y
+```
+
+**Variables**
+
+```
+a = b + 1
+m = 10
+F = m * 9.98
+```
+
+En Python la asignación de datos a las `variables` se realiza mediante `=`.
 
 * La sintaxis es:
 
@@ -84,6 +143,35 @@ nombre_de_la_variable = valor
 `valor` puede ser cualquier tipo de dato
 
 > ⚠️ uso del modo __snake_case__ para definir el identificador de una variable.
+
+**Estilos de codificación**
+
+```python
+# realizar operaciones
+a = 355/113 * (2.2**2)
+c = 355/113 * (2.2*2)
+```
+
+```python
+p = 355/113
+r = 2.2 
+# multiplicar p con r al cuadrado
+a= p * (r**2)
+# miltiplicar p con r 2 veces
+c = p * (r*2)
+```
+
+
+```python
+# Calcular el área y circunferencia de un circulo
+# utilizando una aproximación de pi
+pi = 355/113
+radius = 2.2 
+area= pi * (radius**2)
+# miltiplicar p con r 2 veces
+circumference = pi * (radius*2)
+```
+
 
 ## Listas
 
