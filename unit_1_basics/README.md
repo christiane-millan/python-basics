@@ -5,18 +5,20 @@
 * Comprender los conceptos de la programación procedimental en Python.
 * Implementar estructuras del control en Python.
 * Implementar listas, tuplas y diccionarios.
-* Implementar programación modular mendiante funciones.
+* Implementar programación modular mediante funciones.
 
 ## Scripts y Jupyter Notebooks
 
-* Python es un lenguaje de programación de proposito general que tiene la características de crear código fácil de leer, depurar y exteender.
+* Python es un lenguaje de programación de propósito general que tiene la características de crear código fácil de leer, depurar y exteender.
 * Es __open source__!!
-* Es un lenguaje de programación interpretado, através de scripts, se pueden construir programas para la solución de problemas complejos.
+* Es un lenguaje de programación interpretado, a través de scripts, se pueden construir programas para la solución de problemas complejos.
 * El uso de Jupyter Notebooks permite crear prototipos de programas para crear soluciones complejas.
+
+[Ambientes virtuales](../00-ambiente/README.md)
 
 ## Variables 
 
-En Python. la signación de datos a las `variables` se realiza mediante `=`.
+En Python. la asignación de datos a las `variables` se realiza mediante `=`.
 
 * La sintaxis es:
 
@@ -27,7 +29,6 @@ nombre_de_la_variable = valor
 `valor` puede ser cualquier tipo de dato
 
 > ⚠️ uso del modo __snake_case__ para definir el identificador de una variable.
-
 
 ## Tipos de datos
 

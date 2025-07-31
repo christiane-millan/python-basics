@@ -118,6 +118,6 @@ class UberBlack(Car):
 
 ## Polimorfismo
 
-El concepto de polimorfismo es un nombre __rimbombante__ de describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explicitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution en honor a Barbara Liskov, la cual dice, que se puede sustituir con cualquier subclase a la superclase.
+El concepto de polimorfismo es un nombre __rimbombante__ para describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explicitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution en honor a Barbara Liskov, la cual dice, que se puede sustituir con cualquier subclase a la superclase.
 
 
