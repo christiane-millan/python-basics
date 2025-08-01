@@ -9,7 +9,7 @@
 
 ## Scripts y Jupyter Notebooks
 
-* Python es un lenguaje de programación de propósito general que tiene la características de crear código fácil de leer, depurar y exteender.
+* Python es un lenguaje de programación de propósito general que tiene la características de crear código fácil de leer, depurar y extender.
 * Es __open source__!!
 * Es un lenguaje de programación interpretado, a través de scripts, se pueden construir programas para la solución de problemas complejos.
 * El uso de Jupyter Notebooks permite crear prototipos de programas para crear soluciones complejas.
@@ -18,9 +18,9 @@
 
 ## Tipos de datos
 
-En Python los programa manipulan objeto de de datos y son almacenados de acuerdo a su tipo (escalares y no escalares). 
+En Python los programa manipulan objeto de de datos y son almacenados de acuerdo a su tipo (escalares y no escalares).
 
-Los tipos de datos básicos o escaleres son:
+Los tipos de datos básicos o escalares son:
 
 * `int`: números enteros, ejemplo: `5`, `-100`
 * `float`: números de punto flotante o decimales, ejemplo: `3.27`, `2.0`
@@ -29,28 +29,30 @@ Los tipos de datos básicos o escaleres son:
 
 Los tipos de datos no escalares son:
 
-* `String`: secuencia de caracteres.
-* `List`:
+* `String`: secuencia de caracteres, por ejemplo, "hola mundo", 'bike', "Bike's Mike" 
+* `List`: 
 * `Dictionary`:
 
-> La función `type()` permite conocer el tipo de dato de una variable.
+> La función `type()` permite conocer el tipo de dato.
+
+```python
+type(5)
+type(3.0)
+```
 
 [**`Ejemplo 1`**](./ejemplo-01/variables_tipos_datos.ipynb)
-
 
 > La conversión de tipos o *casting* permite convertir un tipo de datos en otros.
 
 ```python
-float(123)
-round(7.9)
-float(round(7.2))
-int(7.2)
-int(7.9)
+float(3)
+int(3.9)
+round(3.9)
 ```
 
-## Expresiones 
+## Expresiones
 
-- Mediante la combinación de objetos y operadores se forman las expresione s
+- Mediante la combinación de objetos y operadores se forman las expresiones
 
 ```python
 3 + 2
@@ -64,14 +66,14 @@ int(7.9)
 5 / 3 # tinene el valor 1.666667 y tiene el tipo float 
 ```
 
-- Python evalúa las expresiones y almacena el valor (**No almacena las expresiones**).
+- Python evalúa las expresiones y almacena el valor (__No almacena las expresiones__).
 - La sintaxis para una expresión simple es:
 
-```
+```text
 <objeto> <operador> <objeto>
 ```
 
-**Operadores aritméticos**
+### Operadores aritméticos
 
 Los operadores aritméticos de Python son los siguiente:
 
@@ -90,30 +92,29 @@ Los operadores aritméticos de Python son los siguiente:
 
 [**`Ejemplo 2`**](./ejemplo-02/operadores_aritmeticos.ipynb)
 
-<ins>Interpolación de strings</ins>
+### Precedencia de operadores
 
-Para mejorar la intepretación de las salidas (outputs) de los programa. Se utiliza la interpolación de _strings_ o cadenas. 
+| Operador | Operación | Nivel de procedencia |
+| --- | --- | --- |
+| () | (5 + 4) * 3 | 1 |
+| +, - | +25, -6.745 | 2 |
+| *, /, % | 5*5, 25/5 | 3 |
+| +, - | 2+3 | 4 |
 
-Existen diferentes formas, pero una de las más simples y prácticas es el uso de `f-strings`.
+📌  Determinar el resultado de las siguientes expresiones:
 
-[**`Ejemplo 3`**](./ejemplo-03/interpolacion_strings.ipynb) [**`Reto 1`**](./reto-01/interpolacion_strings.ipynb)
+a. `6 + 2 * 3 -4 /2`
 
-## Operadores lógicos y de comparación
+b. `5 * ( 5 + (6-2) + 1`
 
-Los operadores de comparación de Python son
+c. `7 - 6 / 3 + 2 * 3 / 2 - 4 / 2`
 
-| Operador | Operacion         | Ejemplo  |
-|----------|-------------------|----------|
-| `==`     | Igualdad          | `5 == 7` |
-| `!=`     | Desigualdad       | `5 != 7` |
-| `>`      | Mayor que         | `9 > 7`  |
-| `<`      | Menor que         | `7 < 9`  |
-| `>=`     | Mayor o igual que | `9 >= 7` |
-| `<=`     | Menor o igual que | `7 <= 9` |
+d. `7 * 10 - 5 % 3 * 4 + 9`
 
-[**`Ejemplo 4`**](./ejemplo-04/operadores_comparacion.ipynb) [**`Reto 2`**](./reto-02/operadores_comparación.ipynb)
 
-## Variables 
+## Variables
+
+![cookies](./img/cookies.jpg)
 
 En las ciencias de la computación no aplican las ecuaciones matemáticas ya que no se utiliza el conocimiento declarativo, si no el conocimiento imperativo. 
 
@@ -140,9 +141,25 @@ En Python la asignación de datos a las `variables` se realiza mediante `=`.
 nombre_de_la_variable = valor
 ```
 
-`valor` puede ser cualquier tipo de dato
+`valor` puede ser cualquier tipo de dato, incluso puede ser el resultado de una expresión.
+
+```python
+pi = 355 / 113
+```
+
+```python
+# Probar los siguientes casos
+x = 6
+6 = x
+x * y = 3 + 4
+xy = 3 + 4
+```
+
+Cuando se realiza la reasignación de una variable, en realidad esa variable apunta un nuevo lugar de memoria.
 
 > ⚠️ uso del modo __snake_case__ para definir el identificador de una variable.
+
+![](./img/naming-convention-snake-case-kebab-case-camel-case.png)
 
 **Estilos de codificación**
 
@@ -172,6 +189,412 @@ area= pi * (radius**2)
 circumference = pi * (radius*2)
 ```
 
+### cambiar fijaciones (bindings)
+
+* Se puede volver a vincular los nombres de las variables mediante nuevas sentencias de asignación
+  
+* El valor anterior puede seguir almacenado en memoria, pero se ha perdido el identificador del mismo.
+
+```python
+pi = 355/113
+radius = 2.2 
+area= pi * (radius**2)
+radius = radius + 1
+```
+
+**Intercambio de valores**
+
+```python
+# Probar los siguientes casos
+x = 1
+y = 2
+y = x
+x = y
+```
+
+¿Cómo corregimos las sentencias anteriores para lograr el intercambio de valores?
+
+## Cadenas (*strings*)
+
+Una cadena o `str` es una secuencia de caracteres que distingue entre mayúsculas y minúsculas (letras, caracteres especiales, espaciois, digitos).
+
+Las cadenas de texto (strings) se pueden declarar de varias formas, dependiendo de tus necesidades.
+
+```python
+# Uso de " '
+mensaje = 'Hola mundo'
+mensaje = "Hola mundo"
+mensaje = "Ella dijo: 'Hola'"
+mensaje = 'Él respondió: "Hola"'
+```
+
+### Operaciones con cadenas
+
+**Concatenación y repetición de cadenas**
+
+```python
+a = 'me'
+b = "myself"
+
+c = a + b
+d = a + " " + b
+silly = a * 3
+```
+
+```
+# Probar las siguientes líneas
+b = ":"
+c = ")"
+b + 2*c
+
+f = "a"
+g = "b"
+h = "3"
+(f + g) * int(h)
+```
+
+**Longitud de las cadenas**
+
+```python
+s = "abc"
+len(s)
+```
+
+**Indexado**
+
+El uso de corchetes permite realizar el indexado dentro de una cada para obtener los valores de un posición (índice).
+
+```python
+s = "hola mundo"
+
+s[0]
+s[1]
+
+s[-1]
+s[-2]
+```
+
+**Slicing para obtener subcadenas**
+
+La forma de obtener una subcadena (substring) de una cadena en Python es mediante slice (rebanado), utilizando la notación: `[inicio:fin:paso]`.
+
+- **inicio** (start): índice del primer carácter a incluir.
+- **fin** (stop): índice donde se detiene, sin incluirlo.
+- **paso** (step): cantidad de caracteres que se salta entre cada selección (por defecto es 1).
+
+```python
+s = "hola mundo"
+s[3:6]
+s[3:7:2]
+s[:]
+s[::-1]
+s[4:1:-2]
+```
+
+```python
+# probat las siguientes sentencias
+s = "ABC d3f ghi"
+s[3:len(s)-1]
+s[4:0:-1]
+s[6:3]
+```
+
+### Inmutabilidad de las cadenas
+
+Las cadenas no pueden ser modificadas, se pueden crear nuevos objetos que son versiones de una cadena original. El nombre de una variable solo puede vincularse a un objeto.
+
+```python
+s = "car"
+
+s[0] = 'b'
+s = 'b' + s[1:]
+```
+
+### Otras formas de declarar cadenas
+
+```python
+# Comillas triples
+mensaje = '''Este es un mensaje
+que ocupa varias líneas
+y puede contener 'comillas' o "dobles comillas".'''
+
+mensaje = """Otra forma
+de escribir cadenas
+en varias líneas."""
+```
+
+```python
+# Cadenas crudas, evitan que los caracteres de escape se interpreten
+ruta = r"C:\Usuarios\Cristian\Documentos"
+```
+
+```python
+# Cadenas con formato
+# f-string desde Python 3.6
+nombre = "Christian"
+mensaje = f"Hola, {nombre}"
+
+# método format()
+mensaje = "Hola, {}".format(nombre)
+
+# operador %, poco frecuente actualmente
+mensaje = "Hola, %s" % nombre
+```
+
+## Entradas y salidas
+
+Salida (*output*)
+
+La función `print()` en Python sirve para mostrar información en la salida estándar, normalmente la consola o terminal. Es una de las funciones más utilizadas al programar.
+
+Sintaxis básica:
+
+```python
+print(valor1, valor2, ..., sep=' ', end='\n')
+```
+
+- `sep`: separador entre los valores (por defecto un espacio ' ').
+- `end`: lo que se agrega al final (por defecto '\n', o sea, salto de línea).
+
+<ins>Interpolación de strings</ins>
+
+Para mejorar la intepretación de las salidas (outputs) de los programa. Se utiliza la interpolación de *strings* o cadenas.
+
+Existen diferentes formas, pero una de las más simples y prácticas es el uso de `f-strings`.
+
+[**`Ejemplo 3`**](./ejemplo-03/interpolacion_strings.ipynb) [**`Reto 1`**](./reto-01/interpolacion_strings.ipynb)
+
+
+Entrada (*input*)
+
+La función `input()` en Python se usa para leer datos que el usuario escribe por teclado. Es una forma de hacer que el programa interactúe con el usuario.
+
+```python
+nombre = input("¿Cómo te llamas? ")
+print("Hola,", nombre)
+```
+
+Todo lo que se ingresa con input() es tratado como cadena de texto (string).
+
+```python
+numero = int(input("Escribe un número: "))
+resultado = numero * 2
+print("El doble es:", resultado)
+```
+
+**Ejercicio**
+
+Escribir un programa, el cual pedirá un verbo, y se imprimirá `"I can _  better than you"`, donde se reemplaza `_` por el verbo. 
+Además se imprimirá cinco veces el verbo en la siguiente línea separada por espacios. 
+
+Por ejemplo, si el usuario ingresa run, entonces se imprimirá 
+
+```python
+I can run better that you
+run run run run run
+```
+
+[**`Ejemplo inputs-outputs`**](./ejemplo-03-01/newtons_method.ipynb)
+
+## Programas ramificados
+
+En Ciencias de la Computación tenemos dos tipos de notaciones de igualdad: asingación y prueba de igualdad
+
+```python
+variable = value
+```
+ Cambia el valor almacenado de una variable a un nuevo valor
+
+```python
+some_expression == other_expression
+```
+
+- Pruena de igualdad
+- Reemplaza la linea entera con `False` o `True`
+
+### Operadores de comparación
+
+Los operadores de comparación de Python son
+
+| Operador | Operacion         | Ejemplo  | Resultado|
+|----------|-------------------|----------|----------|
+| `==`     | Igualdad          | `5 == 7` | False    |
+| `!=`     | Desigualdad       | `5 != 7` | True     |
+| `>`      | Mayor que         | `9 > 7`  | True     |
+| `<`      | Menor que         | `7 < 9`  | True     |
+| `>=`     | Mayor o igual que | `9 >= 7` | True     |
+| `<=`     | Menor o igual que | `7 <= 9` | True     |
+
+[**`Ejemplo 4`**](./ejemplo-04/operadores_comparacion.ipynb) [**`Reto 2`**](./reto-02/operadores_comparación.ipynb)
+
+### Operadores lógicos
+
+| Operador | Nombre         | Descripción                                                       | Ejemplo               | Resultado            |
+|----------|----------------|-------------------------------------------------------------------|------------------------|-----------------------|
+| `and`    | AND lógico     | Devuelve `True` si ambas expresiones son verdaderas              | `True and False`       | `False`              |
+| `or`     | OR lógico      | Devuelve `True` si al menos una expresión es verdadera           | `True or False`        | `True`               |
+| `not`    | Negación lógica| Invierte el valor lógico (True → False, False → True)            | `not True`             | `False`              |
+
+
+>Ejemplo
+>
+>Escribe un programa que:
+>	1.	Guarde un número secreto en una variable.
+>	2.	Pida al usuario que adivine el número.
+>	3.	Imprima True si el número coincide, o False si no.
+
+```python
+secret = 7
+guess = int(input("Adivina el número secreto: "))
+print(guess == secret)
+```
+### Condicionales
+
+En Python, la sentencia if se utiliza para ejecutar instrucciones condicionalmente, es decir, solo si se cumple una condición.
+
+```python
+if <condicion>:
+    <expresion>
+
+if <condicion>:
+    <expresion>
+else:
+    <expresion>
+
+
+
+if <condicion>:
+    <expresion>
+elif <condicion>:
+    <expresion>
+else:
+    <expresion>
+```
+
+**Ejemplo**
+```Python
+num_1 = int(input("Escoge un entero: "))
+num_2 = int(input("Escoge un entero: "))
+
+if num_1 > num_2:
+    print("El primer número es mayor que el segundo")
+elif num_1 < num_2:
+    print("El segundo número es mayor que el primero")
+else:
+    print("Los números son iguales")
+```
+**Código con problema (indentación incorrecta)**
+
+```python
+x = int(input("Enter a number for x: "))
+y = int(input("Enter a different number for y: "))
+if x == y:
+    print(x, "is the same as", y)
+print("These are equal!")
+```
+
+>Ejemplo
+>Crear un programa en Python que:
+>
+>1. Guarde un número secreto.
+>2. Pida al usuario que adivine un número.
+>3. Indique si el número ingresado es menor, mayor, o igual al número secreto.
+
+## Iteraciones
+
+### El flujo de control con bucles while en Python.
+
+Sintaxis básica del bucle while
+
+```python
+while <condición>:
+    <código>
+    <más código>
+```
+
+Cómo funciona
+
+1. <condición> se evalúa como un valor booleano (True o False).
+2. Si es True, se ejecuta todo el bloque indentado dentro del while.
+3. Después de ejecutar, se vuelve a evaluar la condición.
+4. Esto se repite hasta que la condición sea False.
+5. ⚠️ Si la condición nunca es False, el bucle nunca termina (¡bucle infinito!).
+
+Ejemplos while y while anidado
+
+```python
+contador = 0
+
+while contador < 10:
+    print(contador)
+    contador += 1
+```
+
+While anidado
+
+```python
+contador_externo = 0
+contador_interno = 0
+
+while contador_externo < 5:
+    while contador_interno < 6:
+        print(contador_externo, contador_interno)
+        contador_interno += 1
+
+        if contador_interno >= 3:
+            break
+
+    contador_externo += 1
+    contador_interno = 0
+```
+
+### Bucles for
+
+Los bucles, en diversos lenguajes de programación pueden ser definidos o indefinidos. Los bucles definidos preestablecen las condiciones de la iteración por adelantado. Por su parte, los bucles indefinidos establecen la condición en la que una iteración terminará. En este último tipo de bucles existe el riesgo de que el bucle se vuelva infinito (cuando la condición de suspensión nunca se cumple).
+
+Los bucles definidos se implementan en Python a través del keyword `for`. Por su parte, los bucles indefinidos se implementan con el keyword `while`.
+
+Sin embargo, esta no es la única forma de implementar bucles definidos. Por ejemplo, Javascript puede implementar un bucle definido mediante el siguiente constructo:
+
+```
+for (i = 0; i <= 10; i++) {
+  <expresión>
+}
+
+```
+
+El bucle se puede leer de la siguiente manera:
+
+- Inicializa el bucle en 0
+- Continua el bucle mientras `i` sea menor o igual que 10
+- Incrementa i en uno al final de cada iteración
+
+Es importante señalar que la expresión `i++` es equivalente a lo que en Python escribiríamos como `i += 1`.
+
+Una segunda forma de crear un bucle definido es iterando en una colección de objetos. Esta es la forma que Python utiliza:
+
+```
+for <variable>in <iterable>:
+    <expresión>
+
+```
+
+## El bucle for en Python
+
+En la definición anterior debemos entender `<iterable>` como una colección de objetos; y la `<variable>` como el elemento específico que se está exponiendo mediante el bucle en cada iteración.
+
+```python
+frutas = ['manzana', 'pera', 'mango']
+for frutain frutas:
+        print(fruta)
+```
+
+```
+manzana
+pera
+mango
+
+```
 
 ## Listas
 
