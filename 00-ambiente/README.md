@@ -186,7 +186,7 @@ conda env export --from-history --file environment.yml
 Como instalar un ambiente que se ha compartido
 
 ```bash
-conda create env --file environment.yml
+conda env create --file environment.yml
 ```
 
 ## Mamba

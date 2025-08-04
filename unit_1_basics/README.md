@@ -548,6 +548,41 @@ while contador_externo < 5:
     contador_interno = 0
 ```
 
+> __Práctica: Adivinar un número__
+>
+> __Objetivo__
+> Aplicar estructuras de control while y condicionales en Python para desarrollar un programa interactivo que utilice una lógica de repetición hasta que el usuario cumpla una condición.
+> 
+> __Instrucciones:__
+>
+> Escribe un programa en Python que realice lo siguiente:
+>
+> 1. Define una variable llamada numero_secreto y asígnale un valor entero entre 1 y 10.
+> 2. Solicita al usuario, mediante la función input(), que ingrese un número para intentar adivinar el número secreto.
+> 3. Utiliza un bucle while para repetir la solicitud al usuario hasta que este adivine correctamente el número.
+> 4. Dentro del ciclo, si el número es incorrecto, imprime False y vuelve a pedir otro intento.
+> 5. Cuando el usuario adivine correctamente, imprime True y finaliza el programa.
+
+---
+
+> __Práctica: Guess-and-Check__
+>
+> __Objetivo__
+> Aplicar el método Guess-and-Check (enumeración exhaustiva) para resolver un problema computacional mediante un bucle while en Python.
+>
+> __Instrucciones:__
+>
+> Escribe un programa que encuentre la raíz cúbica entera de un número dado por el usuario, utilizando el enfoque de adivinar y comprobar (guess-and-check). El programa debe:
+>
+> 1. Solicitar al usuario un número entero.
+> 2. Inicializar una conjetura (guess) en 0.
+> 3. Incrementar sistemáticamente guess hasta encontrar un valor tal que `guess**3 == numero o guess**3 > numero`.
+> 4. Si encuentra un valor exacto, imprimir la raíz cúbica.
+> 5. Si no existe tal número entero, indicar que no hay raíz cúbica entera exacta.
+>
+> __Extra__: Agrega condición para que consideré el caso donde se ingresen números negativos.
+
+
 ### Bucles for
 
 Los bucles, en diversos lenguajes de programación pueden ser definidos o indefinidos. Los bucles definidos preestablecen las condiciones de la iteración por adelantado. Por su parte, los bucles indefinidos establecen la condición en la que una iteración terminará. En este último tipo de bucles existe el riesgo de que el bucle se vuelva infinito (cuando la condición de suspensión nunca se cumple).
@@ -560,7 +595,6 @@ Sin embargo, esta no es la única forma de implementar bucles definidos. Por eje
 for (i = 0; i <= 10; i++) {
   <expresión>
 }
-
 ```
 
 El bucle se puede leer de la siguiente manera:
@@ -574,14 +608,159 @@ Es importante señalar que la expresión `i++` es equivalente a lo que en Pyth
 Una segunda forma de crear un bucle definido es iterando en una colección de objetos. Esta es la forma que Python utiliza:
 
 ```
-for <variable>in <iterable>:
+for <variable> in <iterable>:
     <expresión>
-
 ```
 
 ## El bucle for en Python
 
 En la definición anterior debemos entender `<iterable>` como una colección de objetos; y la `<variable>` como el elemento específico que se está exponiendo mediante el bucle en cada iteración.
+
+### Range y loops
+
+
+### Strings y loops
+
+Ejemplo de un código para verificar si la `i` o la `u` están en una cadena.
+
+```python
+# versión uno
+
+s = "Curso de programación en Python - Universidad Tecnológica de la Mixteca"
+
+for index in range(len(s)):
+    if s[index] == 'i' or s[index] == 'u':
+        print("Hay una 'i' o una 'u'")
+```
+
+En el código anterior se utilizan range para iterar a través de los índices de `s`.
+
+```python
+# versión dos
+
+s = "Curso de programación en Python - Universidad Tecnológica de la Mixteca"
+
+for char in s:
+    if char == 'i' or char == 'u':
+        print("Hay una 'i' o una 'u'")
+```
+
+En la versión dos del código se itera directamente a través  de los caracteres de `s`.
+
+```python
+# versión tres
+
+s = "Curso de programación en Python - Universidad Tecnológica de la Mixteca"
+
+for char in s:
+    if char in "iu":
+        print("Hay una 'i' o una 'u'")
+```
+
+En la versión tres del código se itera directamente a través  de los caracteres de `s`, al igual que en la versión dos, pero se utilza una sintaxis más *pythonica*.
+
+__Ejemplo: Robot porrista__
+
+```python
+an_letters = "aefhilmnorsxAEFHILMNORSX"
+word = input("I will cheer for you! Enter a word: ")
+times = int(input("Enthusiasm level (1–10): "))
+
+for c in word:
+    if c in an_letters:
+        print(f'Give me an {c}: {c}')
+    else:
+        print(f'Give me a {c}: {c}')
+
+print("What's that spell?")
+for i in range(times):
+    print(word, '!!!')
+```
+
+> __Práctica: Caracteres únicos__
+>
+> __Objetivo__
+> Aplicar bucle for y operaciones básicas de cadenas en Python para identificar y contar caracteres únicos dentro de una cadena de texto.
+>
+> __Instrucciones:__
+>
+> Escribe un programa en Python que realice lo siguiente:
+>
+> 1. Pide al usuario que ingrese una cadena de texto compuesta solo por letras minúsculas, sin espacios ni caracteres especiales.
+> 2. El programa debe contar cuántas letras diferentes (únicas) contiene la cadena.
+> 3. Imprime el resultado como un número entero.
+
+> __Práctica: ¿Está el número secreto en el rango?__
+>
+> __Objetivo__
+> Desarrollar un programa que recorra un rango de números y determine si un número secreto predefinido está contenido dentro del mismo. Se practicarán condicionales, ciclos for y uso de variables de control (banderas).
+>
+> __Instrucciones:__
+>
+> 1. Define un número secreto de forma fija en el código (por ejemplo: secreto = 7).
+> 2. Escribe un programa que recorra los números del 1 al 10.
+> 3. Si encuentra el número secreto, lo imprime y termina.
+> 4. Si no está en el rango, no imprime nada.
+>
+> __Extra__: Modifica el programa para que, si el número secreto no está en el rango, imprima: `"No encontré el número secreto."`.
+
+Los booleanos pueden ser utilizados como banderas para saber si ha ocurrido algo en el código.
+
+Ejemplo de guess-check de raíces cúbicas: números positivos
+
+```python
+cube = int(input("Ingresar un entero:"))
+
+for guess = in range(cube+1):
+    if guess**3 == cube:
+        print("La raíz cúbica de ", cube, " es ", guess )
+```
+
+Ejemplo de guess-check de raíces cúbicas: números positivos y negativo
+
+```python
+cube = int(input("Ingresar un entero:"))
+
+for guess = in range(abs(cube)+1):
+    if guess**3 == abs(cube):
+        if cube < 0:
+            guess = -guess
+        print("La raíz cúbica de ", cube, " es ", guess )
+```
+
+Ejemplo de guess-check de raíces cúbicas: mejorado
+
+```python
+cube = int(input("Ingresar un entero:"))
+
+for guess = in range(abs(cube)+)):
+    # Termina la búsqueda una vez que se ha pasado la respuesta posible
+    if guess** >= abs(cube):
+        break
+
+if guess**3 != abs(cube):
+    print(cube, "no es un cubo perfecto")
+else:
+    if cube < 0:
+        guess = -guess
+    print(f"La raíz cúbica de {cube} es {guess}")
+```
+
+>Práctica de guess-check: venta de boletos
+>
+>Alyssa, Ben y Cindy están vendiendo boletos para una colecta.
+>
+>* Ben vende 2 boletos menos que Alyssa.
+>* Cindy vende el doble que Alyssa.
+>* En total se vendieron 10 boletos entre las tres personas.
+>* ¿Cuántos boletos vendió Alyssa?
+>* Esto se podría resolver de forma algebraica, pero también podemos usar el método de adivinar y comprobar (guess-and-check).
+
+---
+>Reflexión sobre la práctica anterior, ¿qué ocurriría si la venta de boletos es 1000? y Ben vende 20 boletos menos que Alyssa, y Cindy vende el doble de Alyssa.
+>
+>Resolver de forma que se reduzca el tiempo de ejecución.
+
 
 ```python
 frutas = ['manzana', 'pera', 'mango']
@@ -683,6 +862,7 @@ print(sorted(cars))
 print("\nHere is the original list again:") 
 print(cars)
 ````
+
 __Tamaño de una lista__
 
 La función `len()` permite conocer el tamaño de una lista.
