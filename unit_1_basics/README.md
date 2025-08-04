@@ -557,11 +557,11 @@ while contador_externo < 5:
 >
 > Escribe un programa en Python que realice lo siguiente:
 >
-> 1. Define una variable llamada numero_secreto y asígnale un valor entero entre 1 y 10.
-> 2. Solicita al usuario, mediante la función input(), que ingrese un número para intentar adivinar el número secreto.
-> 3. Utiliza un bucle while para repetir la solicitud al usuario hasta que este adivine correctamente el número.
-> 4. Dentro del ciclo, si el número es incorrecto, imprime False y vuelve a pedir otro intento.
-> 5. Cuando el usuario adivine correctamente, imprime True y finaliza el programa.
+> 1. Define una variable llamada numero_secreto y asígnale un valor entero entre `1` y `10`.
+> 2. Solicita al usuario, mediante la función `input()`, que ingrese un número para intentar adivinar el número secreto.
+> 3. Utiliza un bucle `while` para repetir la solicitud al usuario hasta que este adivine correctamente el número.
+> 4. Dentro del ciclo, si el número es incorrecto, imprime `False` y vuelve a pedir otro intento.
+> 5. Cuando el usuario adivine correctamente, imprime `True` y finaliza el programa.
 
 ---
 
