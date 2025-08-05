@@ -135,7 +135,7 @@ F = m * 9.98
 
 En Python la asignación de datos a las `variables` se realiza mediante `=`.
 
-* La sintaxis es:
+La sintaxis es:
 
 ```python
 nombre_de_la_variable = valor
@@ -144,6 +144,7 @@ nombre_de_la_variable = valor
 `valor` puede ser cualquier tipo de dato, incluso puede ser el resultado de una expresión.
 
 ```python
+pi = 3.1415
 pi = 355 / 113
 ```
 
@@ -230,7 +231,7 @@ mensaje = 'Él respondió: "Hola"'
 
 ### Operaciones con cadenas
 
-**Concatenación y repetición de cadenas**
+#### Concatenación y repetición de cadenas
 
 ```python
 a = 'me'
@@ -241,26 +242,32 @@ d = a + " " + b
 silly = a * 3
 ```
 
-```
-# Probar las siguientes líneas
-b = ":"
-c = ")"
-b + 2*c
+> __🧑‍🏫 Demostración: Adivina un número__
+>
+>__Instrucciones:__
+>
+> Realizar le ejecución de las siguientes lineas de código en el interprete de Python:
+>
+>```python
+># Probar las siguientes líneas
+>b = ":"
+>c = ")"
+>b + 2*c
+>
+>f = "a"
+>g = "b"
+>h = "3"
+>(f + g) * int(h)
+>```
 
-f = "a"
-g = "b"
-h = "3"
-(f + g) * int(h)
-```
-
-**Longitud de las cadenas**
+#### Longitud de las cadenas
 
 ```python
 s = "abc"
 len(s)
 ```
 
-**Indexado**
+### Indexado
 
 El uso de corchetes permite realizar el indexado dentro de una cada para obtener los valores de un posición (índice).
 
@@ -274,7 +281,7 @@ s[-1]
 s[-2]
 ```
 
-**Slicing para obtener subcadenas**
+### Slicing para obtener subcadenas
 
 La forma de obtener una subcadena (substring) de una cadena en Python es mediante slice (rebanado), utilizando la notación: `[inicio:fin:paso]`.
 
@@ -290,9 +297,14 @@ s[:]
 s[::-1]
 s[4:1:-2]
 ```
-
+> __🧑‍🏫 Demostración: Slicing de cadenas__
+>
+>__Instrucciones:__
+>
+>Realizar le ejecución de las siguientes lineas de código en el interprete de Python:
+>
 ```python
-# probat las siguientes sentencias
+# probar las siguientes sentencias
 s = "ABC d3f ghi"
 s[3:len(s)-1]
 s[4:0:-1]
@@ -382,34 +394,57 @@ resultado = numero * 2
 print("El doble es:", resultado)
 ```
 
-**Ejercicio**
-
-Escribir un programa, el cual pedirá un verbo, y se imprimirá `"I can _  better than you"`, donde se reemplaza `_` por el verbo. 
-Además se imprimirá cinco veces el verbo en la siguiente línea separada por espacios. 
-
-Por ejemplo, si el usuario ingresa run, entonces se imprimirá 
-
+>__Práctica: better than you__
+>
+> __Objetivo:__
+>
+> __Instrucciones:__
+>
+> Escribir un programa, el cual pedirá un verbo, y se imprimirá `"I can _  better than you"`, donde se reemplaza `_` por el verbo. 
+>Además se imprimirá cinco veces el verbo en la siguiente línea separada por espacios. 
+>
+>Por ejemplo, si el usuario ingresa run, entonces se imprimirá 
+>
+>```python
+>I can run better that you
+>run run run run run
+>```
+>
+--- 
+> __🧑‍🏫 Demostración: aproximar la raíz cúbica de un número__
+>
+>__Instrucciones:__
+>
+> Realizar le ejecución del siguiente script de Python:
+>
 ```python
-I can run better that you
-run run run run run
+x = int(input('What x to find the cube root of? '))
+g = int(input('What guess to start with? '))
+
+print('Current estimate cubed = ', g**3)
+
+next_g = g - ((g**3 - x) / (3*g**2))
+
+print('Next guess to try = ', next_g)
 ```
 
-[**`Ejemplo inputs-outputs`**](./ejemplo-03-01/newtons_method.ipynb)
+[__`Ejemplo inputs-outputs`__](./ejemplo-03-01/newtons_method.ipynb)
 
 ## Programas ramificados
 
-En Ciencias de la Computación tenemos dos tipos de notaciones de igualdad: asingación y prueba de igualdad
+En Ciencias de la Computación tenemos dos tipos de notaciones de igualdad: asignación y prueba de igualdad
 
 ```python
 variable = value
 ```
+
  Cambia el valor almacenado de una variable a un nuevo valor
 
 ```python
 some_expression == other_expression
 ```
 
-- Pruena de igualdad
+- Prueba de igualdad
 - Reemplaza la linea entera con `False` o `True`
 
 ### Operadores de comparación
@@ -435,19 +470,22 @@ Los operadores de comparación de Python son
 | `or`     | OR lógico      | Devuelve `True` si al menos una expresión es verdadera           | `True or False`        | `True`               |
 | `not`    | Negación lógica| Invierte el valor lógico (True → False, False → True)            | `not True`             | `False`              |
 
-
->Ejemplo
+> __🧑‍🏫 Demostración: Adivina un número__
+>
+>__Instrucciones:__
 >
 >Escribe un programa que:
->	1.	Guarde un número secreto en una variable.
->	2.	Pida al usuario que adivine el número.
->	3.	Imprima True si el número coincide, o False si no.
+>
+>1. Guarde un número secreto en una variable.
+>2. Pida al usuario que adivine el número.
+>3. Imprima True si el número coincide, o False si no.
+>
+>```python
+>secret = 7
+>guess = int(input("Adivina el número secreto: "))
+>print(guess == secret)
+>```
 
-```python
-secret = 7
-guess = int(input("Adivina el número secreto: "))
-print(guess == secret)
-```
 ### Condicionales
 
 En Python, la sentencia if se utiliza para ejecutar instrucciones condicionalmente, es decir, solo si se cumple una condición.
@@ -493,7 +531,7 @@ if x == y:
 print("These are equal!")
 ```
 
->Ejemplo
+>__🏋️ Práctica: Número secreto mejorado__
 >Crear un programa en Python que:
 >
 >1. Guarde un número secreto.
@@ -557,7 +595,7 @@ while contador_externo < 5:
 >
 > Escribe un programa en Python que realice lo siguiente:
 >
-> 1. Define una variable llamada numero_secreto y asígnale un valor entero entre `1` y `10`.
+> 1. Define una variable llamada `numero_secreto` y asígnale un valor entero entre `1` y `10`.
 > 2. Solicita al usuario, mediante la función `input()`, que ingrese un número para intentar adivinar el número secreto.
 > 3. Utiliza un bucle `while` para repetir la solicitud al usuario hasta que este adivine correctamente el número.
 > 4. Dentro del ciclo, si el número es incorrecto, imprime `False` y vuelve a pedir otro intento.
@@ -568,15 +606,15 @@ while contador_externo < 5:
 > __Práctica: Guess-and-Check__
 >
 > __Objetivo__
-> Aplicar el método Guess-and-Check (enumeración exhaustiva) para resolver un problema computacional mediante un bucle while en Python.
+> Aplicar el método Guess-and-Check (enumeración exhaustiva) para resolver un problema computacional mediante un bucle `while` en Python.
 >
 > __Instrucciones:__
 >
 > Escribe un programa que encuentre la raíz cúbica entera de un número dado por el usuario, utilizando el enfoque de adivinar y comprobar (guess-and-check). El programa debe:
 >
 > 1. Solicitar al usuario un número entero.
-> 2. Inicializar una conjetura (guess) en 0.
-> 3. Incrementar sistemáticamente guess hasta encontrar un valor tal que `guess**3 == numero o guess**3 > numero`.
+> 2. Inicializar una conjetura (`guess`) en 0.
+> 3. Incrementar sistemáticamente `guess` hasta encontrar un valor tal que `guess**3 == numero o guess**3 > numero`.
 > 4. Si encuentra un valor exacto, imprimir la raíz cúbica.
 > 5. Si no existe tal número entero, indicar que no hay raíz cúbica entera exacta.
 >
@@ -761,19 +799,320 @@ else:
 >
 >Resolver de forma que se reduzca el tiempo de ejecución.
 
+## Números binarios
+
+Los números en Python
+
+- Enteros (int) 
+- Reales (float)
+
+>__🧑‍🏫 Demostración: Sumatoria de número flotantes__
+>
+>__Instrucciones:__
+>
+>```python
+>x = 0
+>for i un range(10):
+>    x += 0.1
+>print(x == 1)
+>print(x, "==", 10 * 0.1)
+>```
+
+>💡 Las operaciones en algunas representaciones de flotantes puede generar errores. Esto errores pueden tener un gran efecto en operaciones que se realizan miles de veces.
+
+La representación de punto flotante depende del hardware y no la implementación de los lenguajes de programación.
+
+* Los números (y todos los demás tipos de datos) son representados como secuencias de bits.
+* Cuando se escribe números la notación utilizada es base 10. (0.1 representa al número racional 1/10)
+* Esto produce un disociación cognitiva y puede influir en como escribimos código.
+
+### Representación de números en punto flotante
+
+La forma en que los números en punto flotante se representan depende del hardware del computador, no del lenguaje de programación que utilices.
+
+Conceptos clave a comprender:
+
+* Los números (y todo lo que procesa una computadora) se representan internamente como una secuencia de bits (ceros y unos).
+* Mientras que nosotros usamos el sistema decimal (base 10) para escribir números, las computadoras trabajan en base 2 (binario).
+* Por ejemplo, el número decimal 0.1 representa el valor racional 1/10, pero no puede representarse exactamente en binario.
+* Esta diferencia entre lo que escribimos y lo que la máquina interpreta genera una disonancia cognitiva que puede causar errores inesperados al escribir código, especialmente en comparaciones de valores decimales.
+
+### ¿Por qué binario? – Implementación en hardware
+
+* El sistema binario es fácil de implementar en hardware: se pueden construir componentes que estén en uno de dos estados.
+* El hardware de las computadoras está diseñado para trabajar con representaciones que almacenan información como 0’s y 1’s, y realizar operaciones aritméticas con esa representación.
+
+Ejemplos físicos:
+
+* Un voltaje puede ser “alto” o “bajo”.
+* El giro de un campo magnético puede ser “hacia arriba” o “hacia abajo”.
+* Este sistema funciona bien para la aritmética con números enteros,
+pero ¿qué pasa con los números con parte fraccionaria (números decimales o floats)?
+
+### Números Binarios
+
+#### Representación en base 10 (decimal)
+
+En el sistema decimal, un número entero se representa como suma de potencias de 10, multiplicadas por dígitos del 0 al 9.
+
+Ejemplo:
+
+1507 = $1 \cdot 10^3 + 5 \cdot 10^2 + 0 \cdot 10^1 + 7 \cdot 10^0 = 1000 + 500 + 7$
+
+#### Representación en base 2 (binaria)
+
+En el sistema binario, usamos la misma idea, pero con potencias de 2, y solo se usan los dígitos 0 y 1.
+
+Conversión de 1507 a binario:
+
+$1507 = 1 \cdot 2^{10} + 1 \cdot 2^8 + 1 \cdot 2^7 + 1 \cdot 2^6 + 1 \cdot 2^5 + 1 \cdot 2^1 + 1 \cdot 2^0$
+
+$= 1024 + 256 + 128 + 64 + 32 + 2 + 1 = 1507$
+
+$= 2^{10} + 2^8 + 2^7 + 2^6 + 2^5 + 2^1 + 2^0$
+
+$1507_{10} = 10111100011_2$
+
+### Conversión de un número entero decimal a binario
+
+Cuando introducimos números enteros en un programa, lo hacemos en formato decimal (base 10), pero la computadora necesita convertirlos a binario (base 2).
+
+Ejemplo:
+
+Convertir $x = 19_{10}$ a binario.
+
+$19 = 1 \cdot 2^4 + 0 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 10011_2$
+
+#### Método paso a paso: división sucesiva
+
+1. Obtener el residuo al dividir por 2 (x % 2): Este residuo representa el bit menos significativo (el de la derecha).
+2. División entera entre 2 (x // 2): Esto desplaza los bits hacia la derecha (elimina el último bit ya procesado).
+3. Repetir el proceso con el nuevo valor de x, hasta que x sea 0. En cada paso, se agrega un nuevo bit al resultado binario.
+
+Ejemplo intermedio:
+
+$x = 9 \Rightarrow 1001_2 = 1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$
+
+__🧑‍🏫 Demostración: Conversión decimal a flotante__
+>
+>__Instrucciones:__
+>
+>
+>Probar el siguiente código:
+>
+>```python
+>num = 1507
+>result = ''
+>
+>if num == 0:
+>    result = '0'
+>
+>while num > 0:
+>    result = str(num%2) + result
+>    num = num // 2
+>```
+
+## Fracciones decimales
+
+__¿Qué significa una fracción decimal como 0.abc?__
+
+En notación decimal (base 10), se representa como:
+
+$0.abc = a \cdot 10^{-1} + b \cdot 10^{-2} + c \cdot 10^{-3}$
+
+__¿Cómo se representa en binario?__
+
+Usamos la misma lógica, pero con potencias de 2:
+
+$0.abc = a \cdot 2^{-1} + b \cdot 2^{-2} + c \cdot 2^{-3}$
+
+Cada bit fraccional en binario representa una fracción cuya potencia es negativa.
+
+En términos más simples, la representación binaria de una fracción decimal implica encontrar los coeficientes binarios (0 o 1) que multiplican las potencias negativas de 2:
+
+$f = 0.5a + 0.25b + 0.125c + 0.0625d + 0.03125e + \dots$
+
+Donde cada término representa una potencia sucesiva de 2:
+$2^{-1},\ 2^{-2},\ 2^{-3},\ 2^{-4},\ 2^{-5},\ \dots$
+
+_Esto explica por qué muchas fracciones no pueden representarse exactamente en binario (por ejemplo, 0.1), ya que su conversión produce un número periódico que se aproxima, pero no se representa de forma exacta._
+
+#### ¿Qué pasa con las fracciones? ¿Cómo podríamos encontrar su representación en binario?
+
+Tomemos como ejemplo la fracción:
+
+$\frac{3}{8} = 0.375$
+
+En notación decimal:
+
+$0.375 = 3 \cdot 10^{-1} + 7 \cdot 10^{-2} + 5 \cdot 10^{-3}$
+
+#### Idea práctica (recipe idea):
+
+Si multiplicamos la fracción por una potencia de 2 lo suficientemente grande como para convertirla en un número entero, entonces:
+
+1. Convertimos ese entero a binario.
+2. Luego dividimos entre la misma potencia de 2 para regresar al valor original.
+
+__Ejemplo:__
+
+* Multiplicamos:
+
+$0.375 \cdot (2^3) = 3_{10}$
+
+* Convertimos 3 a binario:
+
+$3_{10} = 11_2$
+
+* Ahora dividimos por $2^3$, es decir, desplazamos tres posiciones hacia la derecha:
+
+$11_2 \Rightarrow 0.011_2$
+
+_Resultado:_
+
+$0.375_{10} = 0.011_2$
+
+Este método funciona muy bien cuando la fracción decimal es una potencia exacta de dos o un múltiplo simple (como 0.5, 0.25, 0.125, etc.).
+Pero si la fracción no tiene una representación binaria exacta, se convierte en periódica o inexacta, lo que lleva a errores por punto flotante.
+
+Si no existe un número entero $p$ tal que $x × (2^p)$ sea un número entero, entonces la representación interna siempre será una aproximación.
+
+Y se asume que la fracción decimal que proporcioné como entrada es completamente precisa y no es ya una aproximación como resultado de cómo se leyó el número en Python.
+
+La conversión a punto flotante funciona:
+
+* Precisamente para números como 3/8.
+* Pero no para 1/10.
+* Uno tiene una potencia de 2 que se convierte en número entero, el otro no.
 
 ```python
-frutas = ['manzana', 'pera', 'mango']
-for frutain frutas:
-        print(fruta)
+x = 0.625
+
+p = 0
+while ((2**p)*x) % 1 != 0:
+    print('Resto = ' + str((2**p)*x - int((2**p)*x)))
+    p += 1
+
+num = int(x * (2**p))
+
+resultado = ''
+if num == 0:
+    resultado = '0'
+while num > 0:
+    resultado = str(num % 2) + resultado
+    num = num // 2
+
+for i in range(p - len(resultado)):
+    resultado = '0' + resultado
+
+resultado = resultado[0:-p] + '.' + resultado[-p:]
+
+print('La representación binaria del decimal ' + str(x) + ' es ' + str(resultado))
 ```
 
-```
-manzana
-pera
-mango
+¿Por qué esto es un problema? ¿Qué significa la representación decimal 0.125?
 
-```
+$1 \times 10^{-1} + 2 \times 10^{-2} + 5 \times 10^{-3}$
+
+Supongamos que queremos representarla en binario:
+
+$1 \times 2^{-3} → 0.001$
+
+¿Y qué pasa con la representación decimal 0.1?
+- En base 10: $1 \times 10^{-1}$
+- En base 2: ¿?
+→ $0.0001100110011001100110011…$
+→ ¡Infinito!
+
+Si todo en última instancia se representa en términos de bits, entonces necesitamos pensar en cómo usar la representación binaria para capturar números.
+
+* Los enteros son sencillos.
+* Pero los números reales (valores con dígitos después del punto decimal) son un problema:
+  * La idea era intentar convertir un número real a un entero multiplicándolo por alguna potencia de 2.
+  * ¡A veces no existe tal potencia de 2!
+  * Hay que encontrar una forma de aproximar la secuencia binaria potencialmente infinita de bits necesarios para representarlos.
+
+### Flotantes
+
+Almacenamiento de números flotantes: #.#
+
+Un número de punto flotante es un par de enteros:
+
+* Dígitos significativos y exponente en base 2
+* (1, 1) → $1 \times 2^1$ → $10_2$ → 2.0
+* (1, -1) → $1 \times 2^{-1}$ → $0.1_2$ → 0.5
+* (125, -2) → $125 \times 2^{-2}$ → $11111.01_2$ → 31.25
+ 
+El número máximo de cifras significativas determina la precisión con la que se pueden representar los números.
+
+* La mayoría de las computadoras modernas usan 32 bits para representar las cifras significativas.
+* Si un número requiere más de 32 bits en binario, el número será redondeado:
+* El error ocurrirá en el bit número 32.
+* El error será del orden de $2 \times 10^{-10}$
+---
+
+## Métodos de aproximación
+
+* El método de **probar y verificar (guess-and-check)** ofrece un algoritmo simple para resolver problemas.
+* Cuando el conjunto de soluciones potenciales es enumerable, una enumeración exhaustiva garantiza que funcionará (eventualmente).
+* Es una forma limitada de resolver problemas:
+  * El incremento usualmente es un entero, pero no siempre. Es decir, solo necesitamos algún patrón que nos dé un conjunto finito de valores enumerables.
+  * No puede darnos una solución aproximada con diferentes grados de precisión.
+* Queremos encontrar una aproximación a una respuesta
+  * No solo la respuesta correcta, como en el método de prueba y error (guess-and-check)
+  * Y tampoco simplemente decir que no encontramos la respuesta, como ocurre en prueba y error
+
+### ¿Efecto de la aproximación en nuestros algoritmos?
+
+* La respuesta exacta puede no ser accesible
+* Necesitamos encontrar formas de obtener una respuesta “suficientemente buena”
+* Nuestra respuesta está “lo suficientemente cerca” de la respuesta ideal
+* Necesitamos formas de lidiar con el hecho de que una enumeración exhaustiva no puede probar todos los valores posibles, ya que el conjunto de posibles respuestas es, en principio, infinito
+* Los errores de aproximación en punto flotante son importantes en este método
+* ¡No se puede confiar en la igualdad!
+
+### Búsqueda de raíces
+
+* El uso de **enumeración exhaustiva / prueba y error** para encontrar las raíces de cuadrados perfectos.
+* Supongamos que queremos encontrar la raíz cuadrada de cualquier entero positivo o cualquier número positivo.
+* Pregunta: ¿Qué significa encontrar la raíz cuadrada de $x$?
+  * Encontrar un valor r tal que $r \times r = x$ ¿?
+  * Si $x$ no es un cuadrado perfecto, entonces en general no es posible encontrar un valor exacto de $r$ que satisfaga esta relación; y la búsqueda exhaustiva es infinita.
+
+### Aproximación
+
+Encontrar una respuesta que sea “suficientemente buena”. Por ejemplo, encontrar un valor $r$ tal que $r \times r$ esté dentro de una distancia (pequeña) dada respecto a `x`
+
+* Usar épsilon: dado $x$, queremos encontrar $r$ tal que $|r^2 - x| < \varepsilon$
+
+__Algoritmo:__
+
+* Comenzar con una suposición demasiado pequeña $g$
+* Incrementar con un valor pequeño $a$ para generar una nueva suposición $g$
+* Verificar si $g^2$ está lo suficientemente cerca de $x$ (dentro de $\varepsilon$)
+* Continuar hasta obtener una respuesta suficientemente cercana a la respuesta real
+
+Considerar todos los valores posibles de la forma $g + k \cdot a$ para valores enteros de $k$ (similar a una enumeración exhaustiva). Pero no se pueden probar todas las posibilidades ya que son infinitas
+
+Algoritmo de aproximación
+
+* En este caso, tenemos dos parámetros que configurar:
+  * épsilon (¿qué tan cerca estamos de la respuesta?)
+  * incremento (¿cuánto aumentamos nuestra suposición?)
+* El rendimiento variará en función de estos valores:
+  * En velocidad
+  * En precisión
+* Disminuir el tamaño del incremento → programa más lento, pero con mayor probabilidad de obtener una buena respuesta (y viceversa)
+
+![alt text](./img/epsilon.png)
+
+>💡 La aproximación es como guess-and-check excepto que:
+>
+> * Se realiza una cantidad pequeña como incremento
+> * El procedimiento se detiene lo suficientemente cerca (exacto de ser posible)
+
+
+---
 
 ## Listas
 
