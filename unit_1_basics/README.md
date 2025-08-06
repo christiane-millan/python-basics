@@ -784,7 +784,7 @@ else:
     print(f"La raíz cúbica de {cube} es {guess}")
 ```
 
->Práctica de guess-check: venta de boletos
+>🏋️ Práctica de guess-check: venta de boletos
 >
 >Alyssa, Ben y Cindy están vendiendo boletos para una colecta.
 >
@@ -893,7 +893,7 @@ Ejemplo intermedio:
 
 $x = 9 \Rightarrow 1001_2 = 1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$
 
-__🧑‍🏫 Demostración: Conversión decimal a flotante__
+>__🧑‍🏫 Demostración: Conversión decimal a flotante__
 >
 >__Instrucciones:__
 >
@@ -1102,18 +1102,89 @@ Algoritmo de aproximación
 * El rendimiento variará en función de estos valores:
   * En velocidad
   * En precisión
-* Disminuir el tamaño del incremento → programa más lento, pero con mayor probabilidad de obtener una buena respuesta (y viceversa)
+* Disminuir el tamaño del incremento → programa más lento, pero con mayor probabilidad de obtener una buena respuesta (y viceversa).
+
+>__🧑‍🏫 Demostración: Búsqueda aproximada raíz cuadrada__
+>
+>__Instrucciones:__
+>
+>
+>Probar el siguiente código:
+>
+>```python
+>objetive = int(input('Introduce un número entero:'))
+>epsilon = 0.01 #0.0001
+>step = epsilon**2
+>solution = 0.0
+>
+>while abs(solution**2 - objetive) >= epsilon and solution <= objetive:
+>    print(abs(solution**2 - objetive), objetive)
+>   solution += step
+>
+>if abs(solution**2 - objetive) >= epsilon:
+>    print(f'No se encontro la raíz cuadrada de {objetive}')
+>else:
+>    print(f'La raíz cuadrada de {objetive} es ~ {solution}')
+>```
 
 ![alt text](./img/epsilon.png)
+
+
 
 >💡 La aproximación es como guess-and-check excepto que:
 >
 > * Se realiza una cantidad pequeña como incremento
 > * El procedimiento se detiene lo suficientemente cerca (exacto de ser posible)
 
+>🏋️ __Práctica de aproximación: Análisis de búsqueda aproximada raíz cuadrada__
+> Objetivo: Analizar el comportamiento del algoritmo de raíz cuadrada bajo el enfoque de aproximación al variar el valor de epsilon y precisión.
+>
+> __Instrucciones:__
+>
+> 1. Modificar el algoritmo para que permita contabilizar el número de ocasiones que de evalúa un supuesto (`solution`).
+> 2. Probar con distintos valores de epsilon y precisión.
+> 3. Realizar una conclusión sobre el comportamiento del algoritmo
+
+### Búsqueda Binaria
+
+Cuando la respuesta se encuentra en un conjunto ordenado, podemos utilizar búsqueda binaria. Es altamente eficiente ya que disminuye el espacio de búsqueda por la mitad en cada iteración.
+
+>__🧑‍🏫 Demostración: Búsqueda binaria raíz cuadrada__
+>
+>__Instrucciones:__
+>
+>
+>Probar el siguiente código:
+>
+```python
+objetive = int(input('Introducir un número entero:'))
+epsilon = 0.01
+lower_limit = 0.0
+upper_limit = max(1.0, objetive)
+step = epsilon**2
+solution = (upper_limit + lower_limit) / 2
+
+while abs(solution**2 - objetive) >= epsilon:
+    if solution**2 < objetive:
+        lower_limit = solution
+    else:
+        upper_limit = solution
+    
+    solution = (upper_limit + lower_limit) / 2
+
+print(f'La raíz cuadrada de {objetive} es ~ {solution}')
+```
+
+>🏋️ __Práctica de búsqueda binaria: Análisis de búsqueda aproximada raíz cuadrada__
+> Objetivo: Analizar el comportamiento del algoritmo de raíz cuadrada bajo el enfoque de aproximación al variar el valor de epsilon y precisión.
+>
+> __Instrucciones:__
+>
+> 1. Modificar el algoritmo para que permita contabilizar el número de ocasiones que de evalúa un supuesto (`solution`).
+> 2. Probar con distintos valores de epsilon y precisión.
+> 3. Realizar una conclusión sobre el comportamiento del algoritmo.
 
 ---
-
 ## Listas
 
 Una lista es una colección de elementos en un orden en particular. Se pueden crear listas que incluyan letras, dígitos, cadenas. Se puede colocar cualquier tipo de dato en una lista y los elementos de la lista no necesitan estar en un orden en particular.
