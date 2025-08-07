@@ -1,17 +1,21 @@
 # Programación básica con Python
 
-Dr. Christian Millán
+Dr. Christian Millán.
 
-__Universidad Tecnológica de la Mixteca__
-
+__Universidad Tecnológica de la Mixteca.__
 
 ## Contenido
 
-1. [Fundamentos de programación](./unit_1_basics/README.md)
-2. [Programación Orientada a Objetos](./uni_2_oop/README.md)
-3. [Programación Funcional]()
-4. [Entornos de programación]()
+### 1. Fundamentos de programación
 
+* [1.1. Introducción](./unit_1_basics/README.md)
+* [1.2. Tipos de datos estructurados](./unit_1_basics/04-estructured_types/)
+* [1.3. Funciones](./unit_1_basics/03-functions/)
+  
+### 2. [Programación Orientada a Objetos](./uni_2_oop/README.md)
+
+2. [Programación Funcional]()
+3. [Entornos de programación]()
 
 ## Ejercicios y problemas
 
