@@ -1,4 +1,4 @@
-[Programación Funcional](../README.md)> 4. Funciones
+# Funciones como objetos
 
 Las funciones en Python son objetos de primera clase. Esto significa que son objetos y pueden ser almacenados en variables, referenciados en listas y otros tipos de estructuras, y ser pasados como parámetros de funciones o devueltos como resultado. 
 

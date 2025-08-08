@@ -221,7 +221,8 @@ from pizza import *
 > 2. Dentro de esa carpeta, crea tres archivos Python:
 > 3. Archivo `aritmetica.py`, define las funciones sumar y restar para dos números
 > 4. Archivo `multiplicacion_division.py`, define las funciones multiplicar y dividir para dos números.
-> 5. Archivo main.py 
+> 5. Archivo `main.py`.
+> 
 > Este será el programa principal. Aquí deberás:
 > 
 > * Importar funciones de los otros dos archivos utilizando:
@@ -230,7 +231,7 @@ from pizza import *
 >	* `from multiplicacion_division import multiplicar`
 >	* `import multiplicacion_division as md` (para acceder a dividir)
 >* Solicitar dos números al usuario y mostrar el resultado de las cuatro operaciones usando las funciones importadas.
->* Agrega impresión formateada con f-strings.
+>* Agrega impresión formateada con __f-strings__.
 
 
 # Type hits

@@ -15,8 +15,7 @@ __Universidad Tecnológica de la Mixteca.__
   
 ### 2. [Programación Orientada a Objetos](./uni_2_oop/README.md)
 
-2. [Programación Funcional]()
-3. [Entornos de programación]()
+1. [Entornos de programación]()
 
 ## Ejercicios y problemas
 
