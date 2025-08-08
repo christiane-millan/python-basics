@@ -15,11 +15,57 @@ def greet_user(username):
 Llamada a la función. """
 greet_user('jesse')
 ````
+
+Características de una función
+* Tiene un nombre
+* Piensa en una variable que está vinculada a un objeto función.
+* Tiene parámetros (formales) (0 o más)
+* Es decir, los valores de entrada.
+* Tiene una docstring (opcional, pero recomendada)
+* Es un comentario delimitado por comillas triples (""") que proporciona una especificación de la función — un contrato que relaciona la entrada con la salida.
+* Tiene un cuerpo, es decir, un conjunto de instrucciones que se ejecutan cuando se llama a la función.
+* Devuelve algo
+* Utiliza la palabra clave return.
 __Argumentos y parámetros__
 
 En el ejemplo anterior la variable `username` de la definición de la función `greet_user()` es un ejemplo de un __parámetro__, una pieza de información que la función necesita para realizar su trabajo. El valor `'jesse'` es un ejemplo de un __argumento__. Un argumento es una pieza de información que pasa de una _llamada de la función_ a la función.
 
 - [**`Ejemplo 12 - Funciones`**](./ex-functions.ipynb)
+
+>🏋️ __Práctica funciones: División__
+>
+> Objetivo: Comprender el uso de parámetros, el cuerpo de una función, el operador módulo (%) y el uso del valor de retorno (return) para resolver un problema simple con funciones.
+>
+> __Instrucciones:__
+>
+> 1. Define una función llamada div_by(n, d) que reciba dos números enteros positivos.
+> 2.	La función debe:
+> 
+> * Verificar si d divide a n exactamente (es decir, sin residuo).
+> * Retornar True si lo divide, o False en caso contrario.
+> 3.	Agrega una docstring que documente el comportamiento de la función.
+> 4.	Prueba tu función con los siguientes pares de valores:
+> * n = 10 y d = 3
+> * n = 195 y d = 13
+
+### Alcance de las variables de una función
+
+```python
+def operation(x):
+    y = 1
+    x = x + y
+    print('x = ', x)
+    return x
+
+x = 3
+y = 2
+z = operation(x)
+
+print('x = ', x)
+print('y = ', y)
+print('z = ', z)
+
+```
 
 ## Paso de Listas a funciones
 
@@ -42,56 +88,24 @@ greet_users(usernames)
 
 147-mt
 
-- [**`Ejemplo 13 - Funciones con Listas `**]()
+ [**`Ejemplo 13 - Funciones con Listas `**]()
+  
 **Modificación de una lista en una función**
 
 Cuando se pasa una lista a una función, la función puede modificar la lista, cualquier cambio realizado a lista dentro de la función será permanente, con la finalidad de hacer eficiente el trabajo cuando se trabaja con una gran cantidad de datos.
 
 ```python
-# Start with some designs that need to be printed.
+def greet_users(names):
+    """Print a simple greeting to each user in the list."""
+    names.append("dev")
+    for name in names:
+        msg = "Hello, " + name.title() + "!"
+        print(msg)
 
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-completed_models = []
-   
-# Simulate printing each design, until none are left.
-#  Move each design to completed_models after printing.
-while unprinted_designs:
-    current_design = unprinted_designs.pop()
+usernames = ['hannah', 'ty', 'margot'] 
+my_greet_users(usernames)
 
-    # Simulate creating a 3D print from the design.
-    print("Printing model: " + current_design)
-    completed_models.append(current_design)
-
-# Display all completed models.
-print("\nThe following models have been printed:")
-for completed_model in completed_models:
-    print(completed_model)
-```
-
-```python
-def print_models(unprinted_designs, completed_models): 
-    """
-    Simulate printing each design, until none are left.
-    Move each design to completed_models after printing.
-    """
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
-
-        # Simulate creating a 3D print from the design.
-        print("Printing model: " + current_design)
-        completed_models.append(current_design)
-
-def show_completed_models(completed_models):
-    """Show all the models that were printed.""" 
-    print("\nThe following models have been printed:") 
-    for completed_model in completed_models:
-        print(completed_model)
-
-    unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-    completed_models = []
-
-print_models(unprinted_designs, completed_models)
-show_completed_models(completed_models)
+print(usernames)
 ```
 
 **Prevenir que una función modifique una lista**
@@ -185,7 +199,7 @@ from pizza import make_pizza
 from pizza import make_pizza as mp
 ```
 
-**Uso de un alias para aun módulo**
+**Uso de un alias para un módulo**
 
 ```python
 import pizza as p

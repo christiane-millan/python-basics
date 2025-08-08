@@ -124,22 +124,7 @@ print(players[0:3])
 
 [**`Ejemplo 6`**](./ejemplo-06/listas_uso.ipynb)
 
-
-## Tuplas
-
-En ocasiones es necesario crear una colección como las lista, pero que no permita realizar cambios. Las tuplas una vez inicializadas no permiten realizar cambios en los elementos, es decir, los valores son considerados __inmutables__.
-
-````python
-dimensions = (200, 50)
-
-print(dimensions[0])
-print(dimensions[1])
-````
-
-[**`Ejemplo 7`**](./ejemplo-07/tuplas-basic.ipynb)
-
-## Estructura de control selectiva
-
+### Estructura de control selectiva
 
 En ocasiones en un programa es necesario examinar un conjunto de condiciones y decidir que acción tomar con base a estas condiciones.
 
@@ -154,6 +139,20 @@ for car in cars:
 ````
 
 [**`Ejemplo 8`**](./ejemplo-08/if.ipynb)
+
+## Tuplas
+
+En ocasiones es necesario crear una colección como las lista, pero que no permita realizar cambios. Las tuplas una vez inicializadas no permiten realizar cambios en los elementos, es decir, los valores son considerados __inmutables__.
+
+````python
+dimensions = (200, 50)
+
+print(dimensions[0])
+print(dimensions[1])
+````
+
+[**`Ejemplo 7`**](./ejemplo-07/tuplas-basic.ipynb)
+
 
 ## Diccionarios
 
@@ -251,71 +250,4 @@ users = {
 ````
 
 [**`Ejemplo 10`**](./ejemplo-10/diccionarios_listas.ipynb)
-
-## While
-
-el ciclo `while` permite repetir un bloque de instrucciones mientras la condición sea verdad.
-
-En una estrategia simple, se puede implementar un contador y mediante una condición, determinar el número de repeticiones del bloque de instrucciones del `while`.
-````python
-current_number = 1
-while current_number <= 5:
-    print(current_number)
-    current_number += 1
-````
-
-Otra forma de controlar un ciclo `while` es a través de un centinela, en este caso cuando la condición no revela que el centinela comple un valor, entonces, se repite el bloque hasta que ocurra lo contrario.
-
-````python
-prompt = "\nTell me something, and I will repeat it back to you:" 
-prompt += "\nEnter 'quit' to end the program. "
-
-message = ""
-wwhile message != 'quit':
-    message = input(prompt)
-    print(message)
-````
-
-En otra estrategia más, el uso de una bandera permite determinar hasta cuando repetir el ciclo `while`.
-
-````python
-prompt = "\nTell me something, and I will repeat it back to you:" 
-prompt += "\nEnter 'quit' to end the program. "
-
-active = True
-while active:
-    message = input(prompt)
-    if message == 'quit': 
-        active = False
-    else: 
-        print(message)
-````
-
-En el siguiente ejemplo, se utilizar una estrategia basada en el uso de la sentencia `break`, la cual interrumpe la ejecución del bloque de instrucciones del ciclo `while`.
-
-````python
-prompt = "\nPlease enter the name of a city you have visited:"
-prompt += "\n(Enter 'quit' when you are finished.) "
-
-while True:
-city = input(prompt)
-    if city == 'quit':
-        break
-    else:
-        print("I'd love to go to " + city.title() + "!")
-````
-
-En adición a `break` existe la sentencia `continue`, la cual salta el resto del bloque de instrucciones, pero nuevamente valida la condición del ciclo `while`.
-
-````python
-current_number = 0
-while current_number < 10:
-    current_number += 1
-    if current_number % 2 == 0:
-        continue
-    
-    print(current_number)
-````
-
-[**`Ejemplo 11`**](./ejemplo-11/while_listas.ipynb)
 

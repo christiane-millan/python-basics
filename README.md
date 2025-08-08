@@ -9,8 +9,9 @@ __Universidad Tecnológica de la Mixteca.__
 ### 1. Fundamentos de programación
 
 * [1.1. Introducción](./unit_1_basics/README.md)
-* [1.2. Tipos de datos estructurados](./unit_1_basics/04-estructured_types/)
-* [1.3. Funciones](./unit_1_basics/03-functions/)
+* [1.2. Tipos de datos estructurados](./unit_1_basics/04-estructured_types/README.md)
+* [1.3. Funciones](./unit_1_basics/03-functions/README.md)
+* [1.4. Funciones como objetos](./unit_1_basics/05-funtions-objects/README.md)
   
 ### 2. [Programación Orientada a Objetos](./uni_2_oop/README.md)
 

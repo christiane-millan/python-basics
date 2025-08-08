@@ -542,7 +542,9 @@ print("These are equal!")
 
 ### El flujo de control con bucles while en Python.
 
-Sintaxis básica del bucle while
+El ciclo `while` permite repetir un bloque de instrucciones mientras la condición sea verdad.
+
+Sintaxis básica del bucle while.
 
 ```python
 while <condición>:
@@ -558,6 +560,72 @@ Cómo funciona
 4. Esto se repite hasta que la condición sea False.
 5. ⚠️ Si la condición nunca es False, el bucle nunca termina (¡bucle infinito!).
 
+### Estrategias de uso del ciclo while
+
+En una estrategia simple, se puede implementar un contador y mediante una condición, determinar el número de repeticiones del bloque de instrucciones del `while`.
+
+````python
+current_number = 1
+while current_number <= 5:
+    print(current_number)
+    current_number += 1
+````
+
+Otra forma de controlar un ciclo `while` es a través de un centinela, en este caso cuando la condición no revela que el centinela cumple un valor, entonces, se repite el bloque hasta que ocurra lo contrario.
+
+````python
+prompt = "\nTell me something, and I will repeat it back to you:" 
+prompt += "\nEnter 'quit' to end the program. "
+
+message = ""
+while message != 'quit':
+    message = input(prompt)
+    print(message)
+````
+
+En otra estrategia más, el uso de una bandera permite determinar hasta cuando repetir el ciclo `while`.
+
+````python
+prompt = "\nTell me something, and I will repeat it back to you:" 
+prompt += "\nEnter 'quit' to end the program. "
+
+active = True
+while active:
+    message = input(prompt)
+    if message == 'quit': 
+        active = False
+    else: 
+        print(message)
+````
+
+En el siguiente ejemplo, se utilizar una estrategia basada en el uso de la sentencia `break`, la cual interrumpe la ejecución del bloque de instrucciones del ciclo `while`.
+
+````python
+prompt = "\nPlease enter the name of a city you have visited:"
+prompt += "\n(Enter 'quit' when you are finished.) "
+
+while True:
+city = input(prompt)
+    if city == 'quit':
+        break
+    else:
+        print("I'd love to go to " + city.title() + "!")
+````
+
+En adición a `break` existe la sentencia `continue`, la cual salta el resto del bloque de instrucciones, pero nuevamente valida la condición del ciclo `while`.
+
+````python
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    
+    print(current_number)
+````
+
+[**`Ejemplo 11`**](./ejemplo-11/while_listas.ipynb)
+
 Ejemplos while y while anidado
 
 ```python
@@ -568,7 +636,7 @@ while contador < 10:
     contador += 1
 ```
 
-While anidado
+### While anidado
 
 ```python
 contador_externo = 0
@@ -1183,7 +1251,3 @@ print(f'La raíz cuadrada de {objetive} es ~ {solution}')
 > 1. Modificar el algoritmo para que permita contabilizar el número de ocasiones que de evalúa un supuesto (`solution`).
 > 2. Probar con distintos valores de epsilon y precisión.
 > 3. Realizar una conclusión sobre el comportamiento del algoritmo.
-
----
-
-[Funciones](./03-functions/README.md)
