@@ -211,6 +211,28 @@ import pizza as p
 from pizza import *
 ```
 
+>🏋️ __Práctica funciones: Uso de módulos e importaciones en Python__
+>
+> Objetivo: Aprender a organizar el código en módulos y utilizar distintas formas de importación para estructurar programas más limpios, escalables y reutilizables.
+>
+> __Instrucciones:__
+>
+> 1. Crea una carpeta llamada `calculadora/`.
+> 2. Dentro de esa carpeta, crea tres archivos Python:
+> 3. Archivo `aritmetica.py`, define las funciones sumar y restar para dos números
+> 4. Archivo `multiplicacion_division.py`, define las funciones multiplicar y dividir para dos números.
+> 5. Archivo main.py 
+> Este será el programa principal. Aquí deberás:
+> 
+> * Importar funciones de los otros dos archivos utilizando:
+> 
+>   * `import aritmetica`
+>	* `from multiplicacion_division import multiplicar`
+>	* `import multiplicacion_division as md` (para acceder a dividir)
+>* Solicitar dos números al usuario y mostrar el resultado de las cuatro operaciones usando las funciones importadas.
+>* Agrega impresión formateada con f-strings.
+
+
 # Type hits
 
 ```python
@@ -268,6 +290,33 @@ Sin embargo el tipado estático tiene algunas desventajas:
 - Toma tiempo y esfuerzo
 - Es mejor en versiones recientes de Python
 - Reduce ligeramente el tiempo de ejecución
+
+>🏋️ __Práctica funciones: Type Hints y verificación con mypy__
+>
+> Objetivo: Aprender a utilizar anotaciones de tipo en funciones de Python y validar que el código cumple con las expectativas de tipo mediante la herramienta mypy.
+>
+> __Instrucciones:__
+>
+> 1.	Escribe las siguientes funciones en un archivo llamado operaciones.py, agregando las anotaciones de tipo correspondientes:
+>
+> ```python
+> def suma(a, b):
+>     return a + b
+> 
+> def longitud(texto):
+>     return len(texto)
+> 
+> def es_par(numero):
+>     return numero % 2 == 0
+> 
+> def repetir_texto(texto, veces):
+>     return texto * veces
+> ```
+>
+> 2. Agrega anotaciones de tipo (type hints) en cada función, especificando el tipo de los parámetros y del valor de retorno.
+>
+> 3. Instala mypy y verifica tu código usando mypy
+
 
 # Anotations
 
