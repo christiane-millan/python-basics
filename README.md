@@ -1,4 +1,4 @@
-# Programación básica con Python
+# Programación con Python
 
 Dr. Christian Millán.
 
@@ -13,9 +13,10 @@ __Universidad Tecnológica de la Mixteca.__
 * [1.3. Funciones](./unit_1_basics/03-functions/README.md)
 * [1.4. Funciones como objetos](./unit_1_basics/05-funtions-objects/README.md)
   
-### 2. [Programación Orientada a Objetos](./uni_2_oop/README.md)
+### 2. Programación Orientada a Objetos
 
-1. [Entornos de programación]()
+* [2.1. Introducción](./uni_2_oop/README.md)
+
 
 ## Ejercicios y problemas
 

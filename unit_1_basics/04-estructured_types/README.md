@@ -140,6 +140,42 @@ for car in cars:
 
 [**`Ejemplo 8`**](./ejemplo-08/if.ipynb)
 
+> __🏋️ Práctica: Gestor de Lista de Tareas Pendientes__
+>
+> Objetivo: Aprender a manipular listas en Python mediante operaciones básicas como agregar, insertar, eliminar y ordenar elementos. Esta práctica simula un sistema simple de gestión de tareas diarias.
+>
+> Instrucciones
+>
+>Crea un programa en Python que muestre un menú interactivo con las siguientes opciones:
+>
+> 1. Agregar tarea al final de la lista
+> 2. Insertar tarea en una posición específica
+> 3.Eliminar tarea por nombre
+> 4. Eliminar tarea por posición
+> 5. Marcar tarea como realizada (usando pop)
+> 6. Ver todas las tareas
+> 7. Ordenar tareas alfabéticamente
+> 8. Revertir el orden de las tareas
+> 9. Salir
+>
+> ```python
+> def mostrar_menu():
+>    print("\n📋 Gestor de Tareas Pendientes\n")
+>    print("1. Agregar tarea")
+>    print("2. Insertar tarea")
+>    print("3. Eliminar por nombre")
+>    print("4. Eliminar por posición")
+>    print("5. Marcar como realizada")
+>    print("6. Ver tareas")
+>    print("7. Ordenar tareas")
+>    print("8. Revertir orden")
+>    print("9. Salir")
+>
+> while True:
+>    mostrar_menu()
+>    opcion = input("\nSeleccione una opción: ")
+>```
+
 ## Tuplas
 
 En ocasiones es necesario crear una colección como las lista, pero que no permita realizar cambios. Las tuplas una vez inicializadas no permiten realizar cambios en los elementos, es decir, los valores son considerados __inmutables__.
@@ -175,7 +211,7 @@ alien_0['y_position'] = 25
 print(alien_0)
 ````
 
-Iniciar un diccionario vacio
+Iniciar un diccionario vacío
 
 ````python
 alien_0 = {}
@@ -192,6 +228,7 @@ Modificar valores en un diccionario
 alien_0['color'] = 'yellow'
 print("The alien is now " + alien_0['color'] + ".")
 ````
+
 Eliminar elementos clave-valor de un diccionario
 
 ````python

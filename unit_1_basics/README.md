@@ -394,13 +394,11 @@ resultado = numero * 2
 print("El doble es:", resultado)
 ```
 
->__Práctica: better than you__
+>__🏋️ Práctica: better than you__
 >
 > __Objetivo:__
 >
-> __Instrucciones:__
->
-> Escribir un programa, el cual pedirá un verbo, y se imprimirá `"I can _  better than you"`, donde se reemplaza `_` por el verbo. 
+> __Instrucciones:__ Escribir un programa, el cual pedirá un verbo, y se imprimirá `"I can _  better than you"`, donde se reemplaza `_` por el verbo. 
 >Además se imprimirá cinco veces el verbo en la siguiente línea separada por espacios. 
 >
 >Por ejemplo, si el usuario ingresa run, entonces se imprimirá 
@@ -532,6 +530,7 @@ print("These are equal!")
 ```
 
 >__🏋️ Práctica: Número secreto mejorado__
+>
 >Crear un programa en Python que:
 >
 >1. Guarde un número secreto.
@@ -695,9 +694,9 @@ Los bucles, en diversos lenguajes de programación pueden ser definidos o indefi
 
 Los bucles definidos se implementan en Python a través del keyword `for`. Por su parte, los bucles indefinidos se implementan con el keyword `while`.
 
-Sin embargo, esta no es la única forma de implementar bucles definidos. Por ejemplo, Javascript puede implementar un bucle definido mediante el siguiente constructo:
+Sin embargo, esta no es la única forma de implementar bucles definidos. Por ejemplo, C puede implementar un bucle definido mediante el siguiente constructo:
 
-```
+```c
 for (i = 0; i <= 10; i++) {
   <expresión>
 }
@@ -713,7 +712,7 @@ Es importante señalar que la expresión `i++` es equivalente a lo que en Pyth
 
 Una segunda forma de crear un bucle definido es iterando en una colección de objetos. Esta es la forma que Python utiliza:
 
-```
+```python
 for <variable> in <iterable>:
     <expresión>
 ```
@@ -783,7 +782,7 @@ for i in range(times):
     print(word, '!!!')
 ```
 
-> __Práctica: Caracteres únicos__
+> __🏋️ Práctica: Caracteres únicos__
 >
 > __Objetivo__
 > Aplicar bucle for y operaciones básicas de cadenas en Python para identificar y contar caracteres únicos dentro de una cadena de texto.
@@ -796,7 +795,7 @@ for i in range(times):
 > 2. El programa debe contar cuántas letras diferentes (únicas) contiene la cadena.
 > 3. Imprime el resultado como un número entero.
 
-> __Práctica: ¿Está el número secreto en el rango?__
+> __🏋️ Práctica: ¿Está el número secreto en el rango?__
 >
 > __Objetivo__
 > Desarrollar un programa que recorra un rango de números y determine si un número secreto predefinido está contenido dentro del mismo. Se practicarán condicionales, ciclos for y uso de variables de control (banderas).
@@ -817,7 +816,7 @@ Ejemplo de guess-check de raíces cúbicas: números positivos
 ```python
 cube = int(input("Ingresar un entero:"))
 
-for guess = in range(cube+1):
+for guess in range(cube+1):
     if guess**3 == cube:
         print("La raíz cúbica de ", cube, " es ", guess )
 ```
@@ -827,7 +826,7 @@ Ejemplo de guess-check de raíces cúbicas: números positivos y negativo
 ```python
 cube = int(input("Ingresar un entero:"))
 
-for guess = in range(abs(cube)+1):
+for guess in range(abs(cube)+1):
     if guess**3 == abs(cube):
         if cube < 0:
             guess = -guess
@@ -839,7 +838,7 @@ Ejemplo de guess-check de raíces cúbicas: mejorado
 ```python
 cube = int(input("Ingresar un entero:"))
 
-for guess = in range(abs(cube)+)):
+for guess in range(abs(cube)+1)):
     # Termina la búsqueda una vez que se ha pasado la respuesta posible
     if guess** >= abs(cube):
         break
@@ -852,7 +851,7 @@ else:
     print(f"La raíz cúbica de {cube} es {guess}")
 ```
 
->🏋️ Práctica de guess-check: venta de boletos
+>__🏋️ Práctica de guess-check: venta de boletos__
 >
 >Alyssa, Ben y Cindy están vendiendo boletos para una colecta.
 >
@@ -880,7 +879,7 @@ Los números en Python
 >
 >```python
 >x = 0
->for i un range(10):
+>for i in range(10):
 >    x += 0.1
 >print(x == 1)
 >print(x, "==", 10 * 0.1)
@@ -1005,7 +1004,7 @@ $2^{-1},\ 2^{-2},\ 2^{-3},\ 2^{-4},\ 2^{-5},\ \dots$
 
 _Esto explica por qué muchas fracciones no pueden representarse exactamente en binario (por ejemplo, 0.1), ya que su conversión produce un número periódico que se aproxima, pero no se representa de forma exacta._
 
-#### ¿Qué pasa con las fracciones? ¿Cómo podríamos encontrar su representación en binario?
+### ¿Qué pasa con las fracciones? ¿Cómo podríamos encontrar su representación en binario?
 
 Tomemos como ejemplo la fracción:
 
@@ -1015,7 +1014,7 @@ En notación decimal:
 
 $0.375 = 3 \cdot 10^{-1} + 7 \cdot 10^{-2} + 5 \cdot 10^{-3}$
 
-#### Idea práctica (recipe idea):
+#### Idea práctica (recipe idea)
 
 Si multiplicamos la fracción por una potencia de 2 lo suficientemente grande como para convertirla en un número entero, entonces:
 
@@ -1036,7 +1035,7 @@ $3_{10} = 11_2$
 
 $11_2 \Rightarrow 0.011_2$
 
-_Resultado:_
+*Resultado:*
 
 $0.375_{10} = 0.011_2$
 
@@ -1087,6 +1086,7 @@ Supongamos que queremos representarla en binario:
 $1 \times 2^{-3} → 0.001$
 
 ¿Y qué pasa con la representación decimal 0.1?
+
 - En base 10: $1 \times 10^{-1}$
 - En base 2: ¿?
 → $0.0001100110011001100110011…$
@@ -1117,6 +1117,7 @@ El número máximo de cifras significativas determina la precisión con la que s
 * Si un número requiere más de 32 bits en binario, el número será redondeado:
 * El error ocurrirá en el bit número 32.
 * El error será del orden de $2 \times 10^{-10}$
+
 ---
 
 ## Métodos de aproximación

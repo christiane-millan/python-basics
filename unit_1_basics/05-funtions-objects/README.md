@@ -194,9 +194,18 @@ q = sorted(p, key=area)
 print(q) # [(2, 2), (1, 7), (4, 2), (3, 3), (5, 2)]
 ```
 
-# Funciones lambda
+## Funciones lambda
 
-Una función que calcule el área;
+En algunas ocasiones no se requiere nombrar las funciones, particularmente en funciones simples. Por ejemplo:
+
+En la siguiente función se calcula el área:
+
+```python
+def area(x):
+	return x[0]*x[1]
+```
+
+Se puede utilizar procedimientos anónimos mediante el uso de lambda.
 
 ```python
 lambda x : x[0] * x[1]
@@ -210,7 +219,7 @@ q = sorted(p, key = lambda x: x[0]*x[1])
 
 El código anterior crea un objeto de tipo función temporal y anónimo; y se pasa a la función `sorted()`. La función sorted() la utiliza para realizar el ordenamiento. Y después desaparece, justo como cualquier otro objeto temporal.
 
-La función son nombre no creada con la función lambda es exactamente igual a la creada con `def`. Si se desea, se puede asignar a una variable:
+La función lambda es exactamente igual a la creada con `def`. Si se desea, se puede asignar a una variable:
 
 ```python
 area = lambda x: x[0]*x[1]
@@ -226,9 +235,10 @@ lambda a, b, c, d: a * b + c * d
 
 Las funciones lambda pueden hacer el código más expresivo o más corto, y por lo tanto más fácil de leer. Algunas sugerencia en su uso son:
 
-- Las funciones lambda solo pueden expresar una sola expresión de Python. Si no puedes expresarlo en una solo línea, no utilizar lambdas.
+- Las funciones lambda __solo pueden expresar una sola expresión__ de Python. Si no puedes expresarlo en una solo línea, no utilizar lambdas.
 - Generalmente se utilizan para representar código corto, donde el comportamiento del código es obvio al mirarlo. Si el comportamiento es complicado, es mejor definir una función normal para darle un nombre significativo y agregar comentarios.
-- Dado que una expresión lambda se usará como parte de un código más largo, asegurarse que el código en general sigue siendo fácil de leer. Si una llamada a función utiliza muchas expresiones lambda puede resultar difícil de leer lo que se esta haciendo.
+- Dado que una expresión lambda se usará como parte de un código más largo, asegurarse que el código en general sigue siendo fácil de leer.
+- Si una llamada a función utiliza muchas expresiones lambda puede resultar difícil de leer lo que se esta haciendo.
 - Si la misma función es utilizada en diferentes lugares, es preferible definirla de forma normal, en lugar de repetir la lambda.
 
 A pesar de que las recomendaciones anteriores parecen restrictivas, existen situaciones donde el uso de lambda es perfecto para lo que se necesita.

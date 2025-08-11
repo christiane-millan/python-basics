@@ -1,87 +1,94 @@
-## Ejercicios
+# Ejercicios y Reglas de Entrega
 
-Para la siguiente sección de ejecicios se recomienda evitar en lo posible el uso de funciones definidas en modulos o bibliotecas de python.
+## Instrucciones Generales
 
-### 6.1. Función para determinar la positividad de un número
-Escribe una función llamada `determinar_positividad(n)` que reciba un número entero `n` como argumento. La función debe devolver la letra `'P'` si el número es positivo, y la letra `'N'` si es cero o negativo.
+1. **Organización en módulos**
+   - Cada función debe definirse en un archivo independiente (o agrupadas por tema en un módulo) y ser utilizada desde otro script diferente (por ejemplo, `main.py`).
+   - Estructura sugerida:
+  
+     ```
+     ejercicios/
+       ├─ mod_/              # carpeta opcional por tema (p.ej. “numeros”, “cadenas”)
+       │   └─ utilidades.py  # aquí defines funciones
+       ├─ main.py            # aquí importas y usas las funciones
+       └─ README.md          # opcional: cómo ejecutar
+     ```
 
-### 6.2. Función para verificar divisibilidad
-Escribe una función llamada `es_divisible(a, b)` que reciba dos números enteros `a` y `b`. La función debe devolver `True` si `a` es divisible por `b` o viceversa, y `False` en caso contrario.
+   - No se aceptarán soluciones implementadas y ejecutadas en el mismo archivo sin demostrar la importación desde otro script.
 
-### 6.3. Conversión de Celsius a Fahrenheit
-Crea una función llamada `celsius_a_fahrenheit(c)` que convierta una temperatura dada en grados Celsius a grados Fahrenheit. La fórmula de conversión es: 
-$F = \frac{9}{5} C + 32$
+2. **Importaciones**
+   - Usa importaciones explícitas: `from utilidades import mi_funcion`.
+   - Evita `import *`.
 
-### 6.4. Verificación de dígito
-Escribe una función llamada `es_digito(caracter)` que determine si un carácter dado es uno de los dígitos del 0 al 9. La función debe devolver `True` si es un dígito, y `False` en caso contrario.
+3. **Type hints**
+   - Obligatorio anotar tipos en parámetros y valores de retorno de todas las funciones.
+   - Ejemplo: `def suma(a: int, b: int) -> int:`
 
-### 6.5. Verificación de vocal
-Crea una función llamada `es_vocal(caracter)` que determine si un carácter dado es una vocal (a, e, i, o, u). La función debe devolver `True` si es una vocal, y `False` en caso contrario.
+4. **Docstrings**
+   - Todas las funciones deben incluir un docstring con:
+     - Descripción
+     - Parámetros y tipos
+     - Valor de retorno y tipo
+     - Precondiciones o casos especiales
 
-### 6.6. Redondeo de números
-Escribe una función llamada `redondear(cantidad, decimales)` que acepte un valor real `cantidad` y un valor entero `decimales`. La función debe devolver `cantidad` redondeada al número especificado de decimales. Por ejemplo, `redondear(20.562, 2)` debe devolver `20.56`.
+5. **Estilo PEP‑8**
+   - Nombres en `snake_case`, 4 espacios de indentación, líneas ≤ 79–99 caracteres.
+   - Recomendado: verificar con `flake8` o formatear con `black`.
 
-### 6.7. Mayor de dos números
-Crea una función llamada `maximo(a, b)` que reciba dos números y devuelva el mayor de ellos.
-
-### 6.8. Generación de números primos
-Escribe una función llamada `generar_primos(n)` que calcule y devuelva una lista con los primeros `n` números primos.
+6. **Ejecución y evidencias para el reporte en PDF**
+   - Ejecutar siempre desde el script “cliente” (`main.py`).
+   - Incluir evidencia de ejecución (captura o texto con salidas representativas).
+   - Verificación de tipos con `mypy`.
 
 ---
 
-## Problemas
+## Ejercicios 
 
-### 6.1. Inversión de una cadena
+### 1. Inversión de una cadena
 Escribe una función llamada `invertir_cadena(cadena)` que reciba una cadena de caracteres y la devuelva en forma inversa. Por ejemplo, la cadena `"hola"` debe convertirse en `"aloh"`.
 
-### 6.2. Verificación de palíndromo
+### 2. Verificación de palíndromo
 Crea una función llamada `es_palindromo(cadena)` que determine si una cadena de caracteres es un palíndromo. Un palíndromo es un texto que se lee igual en sentido directo e inverso, como `"radar"`.
 
-### 6.3. Formato de fecha
-Escribe una función llamada `formato_fecha(dia, mes, anio)` que reciba un número de día, mes y año y lo visualice en formato `dd/mm/aa`. Por ejemplo, los valores `8, 10, 1946` deben visualizarse como `8/10/46`.
+### 3. Formato de fecha
+Escribe una función llamada `formato_fecha(dia, mes, anio)` que reciba un número de día, mes y año, y lo visualice en formato `dd/mm/aa`. Por ejemplo, los valores `8, 10, 1946` deben visualizarse como `8/10/46`.
 
-### 6.4. Conversión de coordenadas polares a rectangulares
-Crea una función llamada `polares_a_rectangulares(r, theta)` que convierta coordenadas polares `(r, θ)` a coordenadas rectangulares `(x, y)`. 
+### 4. Conversión de coordenadas polares a rectangulares
+Crea una función llamada `polares_a_rectangulares(r, theta)` que convierta coordenadas polares `(r, θ)` a coordenadas rectangulares `(x, y)`.
 
-### 6.5. Factores primos de un número
+### 5. Factores primos de un número
 Escribe un programa que lea un número entero positivo y luego llame a una función `factores_primos(n)` que visualice los factores primos de ese número.
 
 _¿Cómo se encuentran los factores primos?_
 
 Para encontrar los factores primos de un número, se divide repetidamente por los números primos más pequeños (2, 3, 5, 7, etc.) hasta que el resultado sea 1. Aquí tienes un proceso paso a paso:
 
-	1.	Divide el número por el menor número primo posible (que es 2) y sigue dividiendo hasta que ya no sea divisible.
-	2.	Pasa al siguiente número primo (3, luego 5, etc.) y repite el proceso.
-	3.	Continúa hasta que el número restante sea 1.
+1. Divide el número por el menor número primo posible (que es 2) y sigue dividiendo hasta que ya no sea divisible.  
+2. Pasa al siguiente número primo (3, luego 5, etc.) y repite el proceso.  
+3. Continúa hasta que el número restante sea 1.
 
 Ejemplo práctico:
 
 Supongamos que queremos encontrar los factores primos de 60.
 
-	1.	Dividimos 60 por 2 (el menor número primo):
-
+1. Dividimos 60 por 2 (el menor número primo):  
 60 ÷ 2 = 30
 
-	2.	Dividimos 30 por 2 de nuevo:
-
+2. Dividimos 30 por 2 de nuevo:  
 30 ÷ 2 = 15
 
-	3.	El 15 ya no es divisible por 2, así que pasamos al siguiente número primo, que es 3:
-
+3. El 15 ya no es divisible por 2, así que pasamos al siguiente número primo, que es 3:  
 15 ÷ 3 = 5
 
-	4.	El 5 es un número primo, así que lo dejamos como está.
+4. El 5 es un número primo, así que lo dejamos como está.
 
-Los factores primos de 60 son 2, 2, 3 y 5, o bien:
-
-
+Los factores primos de 60 son 2, 2, 3 y 5, o bien:  
 $60 = 2^2 \times 3 \times 5$
 
+### 6. Visualización de un calendario
+Crea un programa que, mediante la implementación de una función, visualice un calendario de un mes y un año especificados. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
 
-### 6.6. Visualización de un calendario
-Crea un programa que, mediante la implemetación de una función, visualice un calendario de un mes y un año especificado. El usuario debe ingresar el mes y el año, y la función debe imprimir el calendario correspondiente.
-
-Por ejemplo, si se ingresa como mes febrero(2) y año 2021, la impresión en pantalla será:
+Por ejemplo, si se ingresa como mes febrero (2) y año 2021, la impresión en pantalla será:
 
 ````text
 2021
@@ -94,60 +101,66 @@ L   M   Mi  J   V   S   D
 28
 ````
 
-Para conocer los días correctos de la semana para cada día del mes, investiga sobre el calendario perpetuo. 
-
-
-### 6.7. Cambio de base
-Escribe un programa que lea dos enteros positivos `n` y `b`, luego llame a una función `cambiar_base(n, b)` para calcular y visualizar la representación del número `n` que se encuentra en base decimal, y será convertido a base `b`. Para realizar el cambio puedes usar un algoritmo basado en divisiones sucesivas.
-
-Por ejemplo, el resultado de la llamada a la función: `cambiar_base(34, 8)` será igual a  42.
-
-### 6.8. Cálculo del máximo común divisor
-Crea un programa que permita calcular el máximo común divisor (`mcd`) de dos números usando el algoritmo de Euclides. La función `mcd(a, b)` debe devolver el `mcd` de `a` y `b`.
-
-### 6.9. Inverso de un número
-Escribe una función llamada `inverso_numero(n)` que devuelva el inverso de un número dado. Por ejemplo, el inverso de `1234` es `4321`.
-
-### 6.10. Cálculo del coeficiente binomial
-Crea una función llamada `coeficiente_binomial(m, n)` que calcule el coeficiente binomial usando la fórmula:
-$\binom{m}{n} = \frac{m!}{n!(m-n)!}$
-
-### 6.11. Suma de una progresión geométrica
-Escribe un programa que lea dos números `x` y `n` y luego use una función `suma_progresion(x, n)` para calcular la suma de la progresión geométrica:
-$1 + x + x^2 + x^3 + \cdots + x^n$
-
-### 6.12. Análisis de datos de entrada
-Crea un programa que permita introducir una serie de números y luego utilice funciones para encontrar el valor mayor, el valor menor, y la suma de los datos. También debe calcular la media de los datos.
-
-### 6.13. Cálculo de una función matemática
-Escribe una función llamada `calcular_valor(x)` que acepte un parámetro `x` (donde `x \neq 0`) y devuelva el siguiente valor:
-$x^5(e^{2x}-1)$
-
-### 6.14. Cálculo de una expresión matemática
-Crea una función llamada `calcular_expresion(x, n)` que acepte dos parámetros `x` y `n`. La función debe devolver:
-- Si $x \geq 0$: $x + \frac{x^n}{n} - \frac{x^{n+2}}{n+2}$
-- Si $x < 0$: $\frac{x^{n+1}}{n + 1} - \frac{x^{n-1}}{n-1}$
-
-### 6.15. Cálculo del área de un triángulo
-Escribe una función llamada `area_triangulo(a, b, c)` que reciba las longitudes de los tres lados de un triángulo (`a`, `b`, `c`) y devuelva el área del triángulo usando la fórmula de Herón:
-$Área = \sqrt{p(p-a)(p-b)(p-c)}$
-donde $p = \frac{a+b+c}{2}$
-
-### 6.16. Funciones de calendario
-Escribe un programa mediante funciones que realice las siguientes tareas:
-  1. Devuelva el nombre del día de la semana en respuesta a la entrada de la letra inicial (mayúscula o minúscula) de dicho día.
-  2. Determine el número de días de un mes dado.
-
-### 6.17. Conversión de números romanos a arábigos
-Crea un programa que lea una cadena de hasta diez caracteres que representan un número en numeración romana y visualice el número romano y su equivalente en numeración arábiga. La función debe comprobar con los siguientes datos: `LXXXVI (86)`, `CCCXIX (319)`, `MCCLIV (1254)`.
-
-### 6.18. Puntos dentro de un triángulo
-Escribe una función llamada `puntos_dentro_triangulo(v1, v2, v3)` que calcule cuántos puntos de coordenadas enteras existen dentro de un triángulo, dado por las coordenadas de sus tres vértices `(v1, v2, v3)`.
-
-### 6.19. Área de la circunferencia circunscrita
-Crea un programa que, mediante funciones, determine el área de la circunferencia circunscrita de un triángulo, dado por las coordenadas de sus tres vértices.
-
-### 6.20. Cálculo de funciones trigonométricas
-Dado el valor de un ángulo $θ$, escribe una función llamada `funciones_trigonometricas(theta)` que muestre el valor de todas las funciones trigonométricas correspondientes a ese ángulo (`sin`, `cos`, `tan`, `sec`, `csc`, `cot`). Para este ejercicio se sugiere investigar sobre las series de Taylor o series de Maclaurin.
-
 ---
+
+## Ejemplo genérico de entrega
+
+**Archivo:** `utilidades.py`
+```python
+"""
+ utilidades.py
+ Funciones de ejemplo para ejercicios del curso.
+"""
+
+from typing import Sequence
+
+def cuenta_mayores(valores: Sequence[int], umbral: int) -> int:
+    """
+    Cuenta cuántos elementos de `valores` son estrictamente mayores que `umbral`.
+
+    Parámetros
+    ----------
+    valores : Sequence[int]
+        Secuencia de enteros a evaluar.
+    umbral : int
+        Valor umbral de comparación.
+
+    Retorna
+    -------
+    int
+        Número de elementos > umbral.
+
+    Precondiciones
+    --------------
+    - `valores` puede ser lista o tupla de int.
+    """
+    contador: int = 0
+    for v in valores:
+        if v > umbral:
+            contador += 1
+    return contador
+```
+
+**Archivo:** `main.py`
+```python
+from utilidades import cuenta_mayores
+
+def main() -> None:
+    datos = [1, 5, 7, 2, 10]
+    k = 5
+    resultado = cuenta_mayores(datos, k)
+    print(f"Hay {resultado} valores mayores que {k} en {datos}")
+
+if __name__ == "__main__":
+    main()
+```
+
+**Ejecución:**
+```bash
+python main.py
+```
+
+**Verificación de tipos (opcional):**
+```bash
+mypy utilidades.py main.py
+```

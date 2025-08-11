@@ -1,6 +1,6 @@
 # Funciones
 
-Las funciones son bloques de código nombradas que son diseñadas para realizar un trabajo específico. Cuando se realizar una tarea en partícular que se ha definido en una función, se realiza la _llamada_ de la función a través de su nombre. Si es necesario realizar la tarea múltiples veces en varias secciones del programa, de esta forma no es necesario escribir el código para la misma tarea en diferentes secciones.
+Las funciones son bloques de código nombradas que son diseñadas para realizar un trabajo específico. Cuando se realizar una tarea en particular que se ha definido en una función, se realiza la _llamada_ de la función a través de su nombre. Si es necesario realizar la tarea múltiples veces en varias secciones del programa, de esta forma no es necesario escribir el código para la misma tarea en diferentes secciones.
 
 ````python
 """
@@ -17,6 +17,7 @@ greet_user('jesse')
 ````
 
 Características de una función
+
 * Tiene un nombre
 * Piensa en una variable que está vinculada a un objeto función.
 * Tiene parámetros (formales) (0 o más)
@@ -26,7 +27,8 @@ Características de una función
 * Tiene un cuerpo, es decir, un conjunto de instrucciones que se ejecutan cuando se llama a la función.
 * Devuelve algo
 * Utiliza la palabra clave return.
-__Argumentos y parámetros__
+  
+## Argumentos y parámetros
 
 En el ejemplo anterior la variable `username` de la definición de la función `greet_user()` es un ejemplo de un __parámetro__, una pieza de información que la función necesita para realizar su trabajo. El valor `'jesse'` es un ejemplo de un __argumento__. Un argumento es una pieza de información que pasa de una _llamada de la función_ a la función.
 
@@ -234,7 +236,7 @@ from pizza import *
 >* Agrega impresión formateada con __f-strings__.
 
 
-# Type hits
+## Type hints
 
 ```python
 def greet(name: str) -> str:
@@ -243,10 +245,10 @@ def greet(name: str) -> str:
 
 ```python
 def headline(text: str, align: bool = True) -> str:
-	if align:
-		return f"{text.title()}\n{'-' * len(text)}"
-	else:
-		return f" {text.title()} ".center(50, "o")
+    if align:
+        return f"{text.title()}\n{'-' * len(text)}"
+    else:
+        return f" {text.title()} ".center(50, "o")
 ```
 
 ```python
@@ -258,7 +260,7 @@ Python Type Checking
 oooooooooooooo Python Type Checking oooooooooooooo
 ```
 
-# Type Checking
+## Type Checking
 
 Es necesario instalar `Mypy` en el ambiente virtual
 
@@ -280,7 +282,7 @@ mypy headlines.py
 
 ```
 
-**Ventas y desventajas de Type Hits**
+**Ventas y desventajas de Type Hints**
 
 - Ayuda a identificar ciertos errores
 - Ayuda a documentar el código
