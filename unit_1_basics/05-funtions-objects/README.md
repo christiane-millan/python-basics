@@ -323,7 +323,7 @@ x = f(k) # x = 6
 
 En este caso `itemgetter(2)` retorna una función que tomará el número `2` de una lista. Cuando se aplica esta función a una lista `k`, devolverá el segundo elemento, valor `6`. Existen funciones similares para tomar el nombre de un atributo `attrgetter` y llamadas a nombres de métodos `methodcaller`. Estos son ejemplos particulares útiles para el uso del argumento `key` de la función `sorted()`.
 
-# Cierres o _closures*
+# Closures
 
 En programación funcional, es común escribir funciones que crean otras funciones. Una simple manera y elegante de hacer esto es mediante un cierre. Los cierres proporcionan una manera de crear funciones dinámicamente, como lambdas pero mucho más poderosas. 
 
