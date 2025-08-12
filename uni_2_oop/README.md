@@ -54,17 +54,141 @@ Analizamos Objetos para crear **Clases**. Las **Clases** son los modelos sobr
 
 **Abstracción** es cuando separamos los datos de un objeto para generar un molde.
 
-````python
-class Student():
-    def __init__(self, first_name, last_name, major):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.major = major
+### Crear de clases
 
-    def
-````
+La definición de una clase comienza con la palabra reservada `class`, seguido de un identificador de la clase y termina con `:`. En seguida se especifica el contenido.
 
-[**`Ejemplo - Clases`**](./code/clases.ipynb)
+Ejemplo: `firs_class.py`
+
+```python
+class MyFirstClass:
+    pass
+```
+
+A continuación ejecutar la terminal `> python -i first_class.py`.
+
+```terminal
+>>> a = MyFirstClass()
+>>> b = MyFirstClass()
+>>> print(a)
+>>> print(b)
+```
+
+### Agregar atributos
+
+Para asignar valores al atributo en un objeto se utiliza la sintaxis `<objeto>.<atributo> = <valor>` (referido como notación punto).
+
+```python
+class Point:
+    pass
+
+p1 = Point()
+p2 = Point()
+
+p1.x = 5
+p1.y = 4
+
+p2.x = 3
+p2.y = 6
+
+print(p1.x, p1.y)
+print(p2.x, p2.y)
+```
+
+### Agregar comportamientos
+
+En Python los métodos tienen el mismo formato que las funciones (nótese el uso de `self` en los parámetros).
+
+Ejemplo:
+
+```python
+class Point:
+    def reset(self):
+        self.x = 0
+        self.y = 0
+
+p = Point()
+p.reset()
+print(p.x, p.y)
+```
+
+La diferencia sintactica entre un método y una función es el argumento requerido `self` (PEP8). El argumento `self` es una referencia al objeto que esta invocando el método. El objeto es una instancia de la clase, y algunas veces es nombrada la variable instancia.
+
+Al realizar la llamada a un método no se especifica explícitamente el argumento `self`, Python automáticamente se preocupa por esto.
+
+```terminal
+>>> p = Point()
+>>> Point.reset(p)
+>>> print(p.x, p.y)
+```
+¿Qué pasa si olvidamos incluir el argumento `self` en la definición de un método?
+
+Paso de multiples argumentos:
+
+```python
+import math
+
+class Point:
+    def move(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
+
+    def reset(self) -> None:
+        self.move(0, 0)
+
+    def calculate_distance(self, other: "Point") -> float:
+        return math.hypot(self.x - other.x, self.y - other.y)
+```
+
+Ejemplo de uso de la clase:
+
+```terminal
+>>> point1 = Point()
+>>> point2 = Point()
+
+>>> point1.reset()
+>>> point2.move(5, 0)
+>>> print(point2.calculate_distance(point1))
+>>> assert point2.calculate_distance(point1) ==
+point1.calculate_distance(
+... point2
+... )
+>>> point1.move(3, 4)
+>>> print(point1.calculate_distance(point2))
+4.47213595499958
+>>> print(point1.calculate_distance(point1))
+0.0
+```
+
+## Inicialización de un objeto
+
+Muchos lenguajes de programación utilizan el concepto de _constructor_, es un método especial que inicializa un objeto cuando es creado. Python tiene un constructor y un inicializador. El método constructor `__new__()` es raramente utilizado. El método inicializador `__init__()`
+
+```python
+class Point:
+    def __init__(self, x: float, y: float) -> None:
+        self.move(x, y)
+
+    def move(self, x: float, y: float) -> None:
+        self.x = x
+        self.y = y
+
+    def reset(self) -> None:
+        self.move(0, 0)
+
+    def calculate_distance(self, other: "Point") -> float:
+        return math.hypot(self.x - other.x, self.y - other.y)       
+```
+
+Ejemplo de uso de constructor:
+
+```python
+point = Point(3, 5)
+print(point.x, point.y)
+```
+
+
+[**`Ejemplo - Clase Point`**](./code/clases.ipynb)
 [**`Ejercicio - Clases: Student & Classroom`**](./code/student-classroom.ipynb)
 
 ### Modularidad
@@ -84,6 +208,20 @@ La **modularidad** de nuestro código nos va a permitir
 Una buena práctica es separando las clases en archivos diferentes.
 
 [**`Ejemplo - Módulos y paquetes`**](./code/modules-packages.ipynb)
+
+## Control de acceso
+
+En la Programación Orientada a Objetos se tiene un control de acceso (relacionado a la abstracción). La idea es que algunos atributos y comportamientos son marcados como __privados__ o _protected_ (estos solo pueden ser accedidos por la misma clase). Otros son marcados como __protegidos__ o _protected_ que significa que solo esa clase y subclases lo pueden acceder. El resto es __publico__ o _public_ significa que otros objetos tiene permitido acceder.
+
+Python no utiliza estos conceptos, téCnicamente todos los atributos y métodos son accesibles de forma publica. Si algún método no debería ser publico solo se agrega una nota al _docstrings_.
+
+> 🚨 Somos adultos! No hay necesidad de declarar variables privadas cuando se puede ver todo el código.
+>
+> Por convención se utilizar el carácter `_` (guión bajo) para indicar que es una variable interna y tienes que pensarlo tres veces antes de acceder de manera directa.
+>
+> Otra forma de recomendar evitar el uso de una variable es con `__` (doble guión bajo) para indicar ofuscación del nombre o _name mangling_. 
+>
+> Nota: cuando se utiliza ofuscación del nombre o _name mangling_ se antepone el prefijo `_<classname>`.
 
 ## Herencia
 
@@ -114,8 +252,8 @@ class UberBlack(Car):
         self.seatsMaterial = seatsMaterial
 ````
 
-[**`Ejemplo - Herencia`**](./code/inheritance.ipynb)
-
+[**`Ejemplo - Her encia`**](./code/inheritance.ipynb)
+  
 ## Polimorfismo
 
 El concepto de polimorfismo es un nombre __rimbombante__ para describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explicitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution en honor a Barbara Liskov, la cual dice, que se puede sustituir con cualquier subclase a la superclase.
