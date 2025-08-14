@@ -25,4 +25,5 @@ __Universidad Tecnológica de la Mixteca.__
 
 ## Códigos desarrollados en clase por el profesor
 
-[**`Repositorio de códigos muestra`**](https://github.com/christiane-millan/python-basics-lectures-2024v)
+- [**`Repositorio de códigos muestra 2024`**](https://github.com/christiane-millan/python-basics-lectures-2024v)
+- [**`Repositorio de códigos muestra 2025`**](https://github.com/christiane-millan/python-basics-lectures-2025v)

@@ -269,7 +269,7 @@ for topping in pizza['toppings']:
 
 ## Diccionario en un diccionario
 
-Es posibre anidar un diccionario dentro de otro diccionario.
+Es posible anidar un diccionario dentro de otro diccionario.
 
 ````python
 users = {

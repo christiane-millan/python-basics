@@ -160,7 +160,7 @@ point1.calculate_distance(
 0.0
 ```
 
-## Inicialización de un objeto
+### Inicialización de un objeto
 
 Muchos lenguajes de programación utilizan el concepto de _constructor_, es un método especial que inicializa un objeto cuando es creado. Python tiene un constructor y un inicializador. El método constructor `__new__()` es raramente utilizado. El método inicializador `__init__()`
 
@@ -191,7 +191,7 @@ print(point.x, point.y)
 [**`Ejemplo - Clase Point`**](./code/clases.ipynb)
 [**`Ejercicio - Clases: Student & Classroom`**](./code/student-classroom.ipynb)
 
-### Modularidad
+## Modularidad
 
 La modularidad va muy relacionada con las clases y es un principio de la Programación Orientado a Objetos y va de la mano con el Diseño Modular que significa dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
 
@@ -223,7 +223,7 @@ Python no utiliza estos conceptos, téCnicamente todos los atributos y métodos 
 >
 > Nota: cuando se utiliza ofuscación del nombre o _name mangling_ se antepone el prefijo `_<classname>`.
 
-## Herencia
+### Herencia
 
 **Don’t repeat yourself** es una filosofía que promueve la reducción de duplicación en programación, esto nos va a inculcar que no tengamos líneas de código duplicadas.
 
@@ -252,10 +252,65 @@ class UberBlack(Car):
         self.seatsMaterial = seatsMaterial
 ````
 
-[**`Ejemplo - Her encia`**](./code/inheritance.ipynb)
+[**`Ejemplo - Herencia`**](./code/inheritance.ipynb)
+
+### Herencia múltiple
+
+En esencia la herencia múltiple permite a una subclase heredar de más de una clase padre sus funcionalidades. 
+
+En el siguiente ejemplo se agrega la funcionalidad _enviar un correo_ a la clase `Contact` a través de un _mixin_.
+
+```python
+class Emailable(Protocol):
+    email: str
+
+class MailSender(Emailable):
+    def send_mail(self, message: str) -> None:
+        print(f"Sending mail to {self.email=}")
+        # Add e-mail logic here
+
+class EmailableContact(Contact, MailSender):
+    pass
+```
+
+```python
+e = EmailableContact("Jonny B", "j@sloop.net")
+Contact.all_contacts
+
+e.send_mail("Hello, test email here")
+```
+
   
 ## Polimorfismo
 
-El concepto de polimorfismo es un nombre __rimbombante__ para describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explicitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution en honor a Barbara Liskov, la cual dice, que se puede sustituir con cualquier subclase a la superclase.
+El concepto de polimorfismo es un nombre __rimbombante__ para describir un concepto muy simple: diferentes comportamientos ocurren dependiendo de cual sea la subclase que sea utilizada, sin tener que conocer explícitamente qué subclase es.  En algunas ocasiones, se le conoce como el Principio de Liskov Substitution (en honor a Barbara Liskov) que se puede sustituir con cualquier subclase a la superclase.
 
 
+```python
+from pathlib import Path
+
+class AudioFile:
+    ext: str
+
+    def __init__(self, filepath: Path) -> None:
+        if not filepath.suffix == self.ext:
+            raise ValueError("Invalid file format")
+    
+        self.filepath = filepath
+
+class MP3File(AudioFile):
+    ext = ".mp3"
+    
+    def play(self) -> None:
+        print(f"playing {self.filepath} as mp3")
+
+class WavFile(AudioFile):
+    ext = ".wav"
+    def play(self) -> None:
+        print(f"playing {self.filepath} as wav")
+
+class OggFile(AudioFile):
+    ext = ".ogg"
+    def play(self) -> None:
+        print(f"playing {self.filepath} as ogg")
+```
